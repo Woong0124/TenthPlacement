@@ -99,7 +99,7 @@ int main()
 
 
 	// Send / Recive
-	// 구조체 통신 연습
+	// 구조체 통신 연습 
 	/*StData SendStData;
 	SendStData.ActorType = "Sphere";
 	SendStData.LocX = 299;
