@@ -1,6 +1,16 @@
 #include "MyDB.h"
 #include <iostream>
 
+
+
+#define Host "localhost"
+#define User "root"
+#define PW "0000"
+#define DB "UE4SocketDB"
+#define Port 3306
+
+
+
 MyDB::MyDB()
 {
 	MySql = NULL;
@@ -18,7 +28,7 @@ MyDB::~MyDB()
 bool MyDB::ConnectDataBase()
 {
 	// Database 연결
-	MySql = mysql_real_connect(&mysql, "localhost", "root", "0000", "UE4SocketDB", 3306, NULL, 0);
+	MySql = mysql_real_connect(&mysql, Host, User, PW, DB, Port, NULL, 0);
 
 	// 성공 or 실패 처리
 	if (!MySql)
@@ -56,7 +66,7 @@ bool MyDB::QueryOutput()
 	// Query 결과 출력
 	while ((SqlRow = mysql_fetch_row(SqlResult)) != NULL)
 	{
-		for (int i = 0; i < mysql_num_fields(SqlResult); ++i)
+		for (unsigned int i = 0; i < mysql_num_fields(SqlResult); ++i)
 		{
 			std::cout << SqlRow[i] << "  ";
 		}

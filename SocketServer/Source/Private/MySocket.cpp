@@ -1,6 +1,8 @@
 #include "MySocket.h"
 #include <iostream>
 
+#define PORT 3307
+
 MySocket::MySocket()
 {
 	ServerSocket = INVALID_SOCKET;
@@ -42,7 +44,7 @@ bool MySocket::BindListenSocket()
 	memset(&ServerSockAddr, 0, sizeof(SOCKADDR_IN));
 	ServerSockAddr.sin_family = PF_INET;
 	ServerSockAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	ServerSockAddr.sin_port = htons(3307);
+	ServerSockAddr.sin_port = htons(PORT);
 
 	// Socket πŸ¿ŒµÂ
 	int BindServerSock = bind(ServerSocket, (SOCKADDR*)&ServerSockAddr, sizeof(SOCKADDR_IN));
@@ -84,6 +86,13 @@ bool MySocket::AcceptSocket()
 
 void MySocket::SendSocket()
 {
+	char Buffer[] = "abcd";
+	int SendBuffer = sizeof(Buffer);
+	SendBuffer = send(ClientSocket, Buffer, SendBuffer, 0);
+	if (SendBuffer == SOCKET_ERROR)
+	{
+		std::cout << "Send Error" << std::endl;
+	}
 }
 
 void MySocket::RecvSocket()

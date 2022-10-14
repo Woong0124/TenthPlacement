@@ -69,6 +69,10 @@ int main()
 
 
 
+	// 테스트 중
+	MySock->SendSocket();
+
+
 
 
 	// 소켓 해제
