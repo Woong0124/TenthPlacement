@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Tenth_Tutorial",
+			"Path": "C:\\Tenth_Tutorial\\Tenth_Tutorial\\Source\\Tenth_Tutorial.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Tenth_TutorialEditor",
+			"Path": "C:\\Tenth_Tutorial\\Tenth_Tutorial\\Source\\Tenth_TutorialEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

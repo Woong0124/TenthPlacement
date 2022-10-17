@@ -1,0 +1,2 @@
+C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h
+C:\Tenth_Tutorial\Tenth_Tutorial\Source\Tenth_Tutorial\Tenth_Tutorial.h

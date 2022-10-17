@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Tenth_Tutorial.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{CB0847D8-7F36-4D5F-A254-9C181330F455}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Tenth_Tutorial.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Tenth_TutorialEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{8F99A342-2947-4563-815F-20E08E9B7F2D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Tenth_Tutorial">
+      <UniqueIdentifier>{A39F67FF-F7C5-46E9-A8A7-790A048D95B3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Tenth_Tutorial\Tenth_Tutorial.Build.cs">
+      <Filter>Source\Tenth_Tutorial</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Tenth_Tutorial\Tenth_Tutorial.cpp">
+      <Filter>Source\Tenth_Tutorial</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tenth_Tutorial\Tenth_Tutorial.h">
+      <Filter>Source\Tenth_Tutorial</Filter>
+    </ClInclude>
+    <Filter Include="Source\Tenth_Tutorial\Private">
+      <UniqueIdentifier>{9F36F55E-D697-4F4B-B320-20E5B57E6999}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Tenth_Tutorial\Private\MySocket.cpp">
+      <Filter>Source\Tenth_Tutorial\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Tenth_Tutorial\Public">
+      <UniqueIdentifier>{281475FC-9A85-42AE-BDA7-87BE426EC5F1}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Tenth_Tutorial\Public\MySocket.h">
+      <Filter>Source\Tenth_Tutorial\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Tenth_Tutorial\Tenth_TutorialGameModeBase.cpp">
+      <Filter>Source\Tenth_Tutorial\Private</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Tenth_Tutorial\Tenth_TutorialGameModeBase.h">
+      <Filter>Source\Tenth_Tutorial\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
