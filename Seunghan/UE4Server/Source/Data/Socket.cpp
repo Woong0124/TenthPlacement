@@ -97,16 +97,13 @@ bool Socket::ReciveSocket()
 	return true;
 }
 
-void Socket::ReciveStruct(SpawnActorInfo* ActorInfo)
+void Socket::ReciveStruct(SpawnActorInfo ActorInfo)
 {
 	int len;
 	recv(_Socket, (char*)&len, sizeof(int), 0);
 
 	char	Buffer[1024] = { 0, };
 	recv(_Socket, Buffer, len, 0);
-
-	ActorInfo = (SpawnActorInfo*)Buffer;
-
-	UE_LOG(LogTemp, Log, TEXT("funtion : %i"), ActorInfo->Key);
-
+	
+	ActorInfo = *((SpawnActorInfo*)Buffer);
 }

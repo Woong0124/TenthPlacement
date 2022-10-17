@@ -19,8 +19,6 @@ using namespace std;
 
 int main()
 {
-
-
 	MySQL* sql = new MySQL;
 
 	SpawnActorInfo a;
@@ -32,10 +30,9 @@ int main()
 	sql->Insert(a);
 
 	cout << a.Key << endl;
-	cout << a.Name << endl;
-	cout << a.VectorInfo.x << endl;
-	cout << a.VectorInfo.y << endl;
-	cout << a.VectorInfo.z << endl;
+	cout << a.x << endl;
+	cout << a.y << endl;
+	cout << a.z << endl;
 
 
 	TCP_Socket* Socket = new TCP_Socket;

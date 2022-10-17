@@ -17,18 +17,13 @@
 /**
  * 
  */
-struct MyFVector
-{
-	int x;
-	int y;
-	int z;
-};
 
 struct SpawnActorInfo
 {
 	int Key;
-	FString Name;
-	MyFVector VectorInfo;
+	int x;
+	int y;
+	int z;
 
 	SpawnActorInfo() { Key = 0; };
 };
@@ -64,7 +59,7 @@ public:
 	bool ReciveSocket();
 
 	// 구조체 받기
-	void ReciveStruct(SpawnActorInfo* ActorInfo);
+	void ReciveStruct(SpawnActorInfo ActorInfo);
 
 	SOCKET _Socket;
 

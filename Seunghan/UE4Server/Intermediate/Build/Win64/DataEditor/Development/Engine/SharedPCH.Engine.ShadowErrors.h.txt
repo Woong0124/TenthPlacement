@@ -1,4 +1,4 @@
-C:/Users/seunghan/Desktop/DB_Socket_UE/Data/Intermediate/Build/Win64/DataEditor/Development/Engine/SharedPCH.Engine.ShadowErrors.h
+C:/Users/seunghan/Desktop/DB_Socket_UE/UE4Server/Intermediate/Build/Win64/DataEditor/Development/Engine/SharedPCH.Engine.ShadowErrors.h
 C:/Program Files/Epic Games/UE_4.27/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/ContainersFwd.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\CoreTypes.h

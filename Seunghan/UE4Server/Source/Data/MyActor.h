@@ -24,5 +24,5 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-
+	class UStaticMeshComponent* SM;
 };
