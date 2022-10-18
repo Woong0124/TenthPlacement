@@ -231,8 +231,8 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Inc\Data
-/I C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Source
+/I C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data
+/I C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Source
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -262,12 +262,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt"
-/FI"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Inc\Data\Data.init.gen.cpp"
-/FI"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h"
-/Fo"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Development\Data\Data.init.gen.cpp.obj"
+/FI"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\Data.init.gen.cpp"
+/FI"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h"
+/Fo"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\UE4Editor\Development\Data\Data.init.gen.cpp.obj"
 /TP
 /GR-
 /W4

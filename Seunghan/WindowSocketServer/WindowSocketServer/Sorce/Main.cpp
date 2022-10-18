@@ -29,12 +29,6 @@ int main()
 
 	sql->Insert(a);
 
-	cout << a.Key << endl;
-	cout << a.x << endl;
-	cout << a.y << endl;
-	cout << a.z << endl;
-
-
 	TCP_Socket* Socket = new TCP_Socket;
 
 	Socket->InitSocket();
@@ -46,6 +40,20 @@ int main()
 	Socket->ListenSocket();
 
 	Socket->AcceptSocket();
+
+	Socket->SendStruct(a);
+
+
+
+	SpawnActorInfo b;
+
+	b = Socket->ReciveStruct(&b);
+
+	char MSG[100] = {};
+	sprintf_s(MSG, "VALUES (%i,\"%s\",%i,%i,%i)", b.Key, b.Name, b.x, b.y, b.z);
+	cout << MSG;
+
+	sql->DataTableInsert(MSG);
 
 	Socket->SendStruct(a);
 

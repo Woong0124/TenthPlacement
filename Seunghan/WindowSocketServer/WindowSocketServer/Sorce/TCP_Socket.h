@@ -43,7 +43,7 @@ public:
 	void SendStruct(SpawnActorInfo ActorInfo);
 
 	// 구조체 받기
-	void ReciveStruct();
+	SpawnActorInfo ReciveStruct(SpawnActorInfo* ActorInfo);
 
 
 	SOCKET _Socket;

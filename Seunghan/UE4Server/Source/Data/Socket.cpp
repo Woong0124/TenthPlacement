@@ -97,7 +97,7 @@ bool Socket::ReciveSocket()
 	return true;
 }
 
-void Socket::ReciveStruct(SpawnActorInfo ActorInfo)
+SpawnActorInfo Socket::ReciveStruct(SpawnActorInfo* _ActorInfo)
 {
 	int len;
 	recv(_Socket, (char*)&len, sizeof(int), 0);
@@ -105,5 +105,27 @@ void Socket::ReciveStruct(SpawnActorInfo ActorInfo)
 	char	Buffer[1024] = { 0, };
 	recv(_Socket, Buffer, len, 0);
 	
-	ActorInfo = *((SpawnActorInfo*)Buffer);
+	_ActorInfo = (SpawnActorInfo*)Buffer;
+
+	return *_ActorInfo;
+}
+
+void Socket::SendStruct(SpawnActorInfo _ActorInfo)
+{
+	int SendInt;
+	int SendIntLength = sizeof(_ActorInfo);
+	SendInt = send(_Socket, (char*)&SendIntLength, sizeof(int), 0);
+
+	if (SendInt == SOCKET_ERROR)
+	{
+		std::cout << "Send Error" << std::endl;
+		exit(-1);
+	}
+
+	SendInt = send(_Socket, (char*)&_ActorInfo, sizeof(SpawnActorInfo), 0);
+	if (SendInt == SOCKET_ERROR)
+	{
+		std::cout << "Send Error" << std::endl;
+		exit(-1);
+	}
 }

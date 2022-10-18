@@ -76,6 +76,7 @@ void MySQL::Insert(SpawnActorInfo& ActorInfo)
 			ActorInfo.Key = stoi(Row[i]);
 			break;
 		case 1:
+			strcpy_s(ActorInfo.Name, Row[i]);
 			break;
 		case 2:
 			ActorInfo.x = stoi(Row[i]);
@@ -86,9 +87,16 @@ void MySQL::Insert(SpawnActorInfo& ActorInfo)
 		case 4:
 			ActorInfo.z = stoi(Row[i]);
 			break;
-
 		}
-
-
 	}
 }
+
+void MySQL::DataTableInsert(const char* value)
+{
+	char InsertQuery[100] = "insert into seunghan9 ";
+	strcat_s(InsertQuery, value);
+	cout << InsertQuery << endl;
+	mysql_query(ConnPtr, InsertQuery);
+}
+
+

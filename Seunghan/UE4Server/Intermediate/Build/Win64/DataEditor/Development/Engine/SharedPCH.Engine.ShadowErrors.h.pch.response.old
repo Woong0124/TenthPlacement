@@ -260,11 +260,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt"
-/I C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine
-/Yc"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
-/Fo"C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+/I C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine
+/Yc"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
+/Fo"C:\Users\seunghan\Desktop\DB_Socket_UE\UE4Server\Intermediate\Build\Win64\DataEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 /TP
 /GR-
 /W4

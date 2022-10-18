@@ -34,5 +34,6 @@ public:
 	// 데이터를 넣기
 	void Insert(SpawnActorInfo& ActorInfo);
 
+	void DataTableInsert(const char* value);
 };
 

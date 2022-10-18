@@ -21,11 +21,20 @@
 struct SpawnActorInfo
 {
 	int Key;
+	char Name[10];
 	int x;
 	int y;
 	int z;
 
 	SpawnActorInfo() { Key = 0; };
+	SpawnActorInfo(int _key, const char* _Name, int _x, int _y, int _z)
+	{
+		Key = _key;
+		strcpy_s(Name,_Name);
+		x = _x;
+		y = _y;
+		z = _z;
+	}
 };
 
 class DATA_API Socket
@@ -59,7 +68,9 @@ public:
 	bool ReciveSocket();
 
 	// 구조체 받기
-	void ReciveStruct(SpawnActorInfo ActorInfo);
+	SpawnActorInfo ReciveStruct(SpawnActorInfo* _ActorInfo);
+
+	void SendStruct(SpawnActorInfo _ActorInfo);
 
 	SOCKET _Socket;
 

@@ -232,7 +232,16 @@ void TCP_Socket::SendStruct(SpawnActorInfo ActorInfo)
 	}
 }
 
-void TCP_Socket::ReciveStruct()
+SpawnActorInfo TCP_Socket::ReciveStruct(SpawnActorInfo* ActorInfo)
 {
+	int		len = 0;
+	recv(_SocketConnected, (char*)&len, sizeof(int), 0);
+
+	char	Buffer[1024] = { 0, };
+	recv(_SocketConnected, Buffer, len, 0);
+
+	ActorInfo = (SpawnActorInfo*)Buffer;
+
+	return *ActorInfo;
 }
 
