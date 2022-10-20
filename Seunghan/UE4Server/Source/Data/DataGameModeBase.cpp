@@ -10,7 +10,7 @@ using namespace std;
 
 #define PORT	4000
 #define PACKED_SIZE 1024
-#define SERVER_IP	"192.168.219.117"
+#define SERVER_IP	"192.168.0.178"
 
 
 
@@ -19,10 +19,11 @@ void ADataGameModeBase::BeginPlay()
 	_Sock.InitSocket();
 	_Sock.CreatSocket();
 	_Sock.ConnectSocket(SERVER_IP, PORT);
+
 	for (int i = 0; i < 2; ++i)
 	{
 		SpawnActorInfo b;
-		b = _Sock.ReciveStruct(&b);
+		b = _Sock.TReciveStruct<SpawnActorInfo>(&b);
 
 		FVector Fv;
 		Fv.X = b.x;
@@ -35,7 +36,7 @@ void ADataGameModeBase::BeginPlay()
 
 		SpawnActorInfo ActorInfo(3,"real",300,140,600);
 
-		_Sock.SendStruct(ActorInfo);
+		_Sock.TSendStruct<SpawnActorInfo>(ActorInfo);
 	}
 	
 }

@@ -115,17 +115,6 @@ void Socket::SendStruct(SpawnActorInfo _ActorInfo)
 	int SendInt;
 	int SendIntLength = sizeof(_ActorInfo);
 	SendInt = send(_Socket, (char*)&SendIntLength, sizeof(int), 0);
-
-	if (SendInt == SOCKET_ERROR)
-	{
-		std::cout << "Send Error" << std::endl;
-		exit(-1);
-	}
-
 	SendInt = send(_Socket, (char*)&_ActorInfo, sizeof(SpawnActorInfo), 0);
-	if (SendInt == SOCKET_ERROR)
-	{
-		std::cout << "Send Error" << std::endl;
-		exit(-1);
-	}
+
 }

@@ -9,5 +9,5 @@ struct SpawnActorInfo
 	int y;
 	int z;
 
-	SpawnActorInfo() { Key = 0; x = 0; y = 0; z = 0; Name[10] = {0}; }
+	SpawnActorInfo() { memset(this, 0, sizeof(SpawnActorInfo)); };
 };

@@ -72,8 +72,37 @@ public:
 
 	void SendStruct(SpawnActorInfo _ActorInfo);
 
+	template<typename T>
+	T TReciveStruct(T* _ActorInfo);
+
+	template<typename T>
+	void TSendStruct(T _ActorInfo);
+
 	SOCKET _Socket;
 
 	SOCKET _SocketConnected;
 
 };
+
+template<typename T>
+inline T Socket::TReciveStruct(T* _Struct)
+{
+	int len;
+	recv(_Socket, (char*)&len, sizeof(int), 0);
+
+	char	Buffer[1024] = { 0, };
+	recv(_Socket, Buffer, len, 0);
+
+	_Struct = (T*)Buffer;
+
+	return *_Struct;
+}
+
+template<typename T>
+inline void Socket::TSendStruct(T _Struct)
+{
+	int SendInt;
+	int SendIntLength = sizeof(_Struct);
+	SendInt = send(_Socket, (char*)&SendIntLength, sizeof(int), 0);
+	SendInt = send(_Socket, (char*)&_Struct, sizeof(_Struct), 0);
+}

@@ -59,8 +59,9 @@ bool TCP_Socket::CreatSocket()
 
 	// PF_INET은 IPV4 타입을 만들것이고, SOCK_STREAM은 빨대를 만들어 연결 지향적 소켓을 만들겠다는 의미이다.
 	// 마지막 인자는 protocol 즉 통신 규약이 들어간다. TCP를 사용함으로 IPPROTOCOL_TCP를 사용한다고 지정한다.
+
 	_Socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if (_Socket == INVALID_SOCKET)
+	if (_Socket == INVALID_SOCKET) // 직역하면 유효하지 않은 소켓.
 	{
 		std::cout << " fail create Socket : " << GetLastError() << std::endl; // 마지막 에러 문제 확인
 		exit(-1);
@@ -133,7 +134,7 @@ bool TCP_Socket::AcceptSocket()
 	SOCKADDR_IN ClientSockAddr;
 	memset(&ClientSockAddr, 0, sizeof(SOCKADDR_IN));
 	int ClientSockAddrLength = sizeof(ClientSockAddr);
-
+	
 	// accept 함수를 이용하여 접속 요청을 수락한다. 이 함수는 동기화된 방식으로 동작한다.
 	// 동기화된 방식이란 요청을 마무리하기 전까지는 계속 대기 상태에 놓이는 것을 뜻한다.
 	// 즉 요청이 오기전까지는 이 함수는 안빠져나온다.
@@ -219,17 +220,9 @@ void TCP_Socket::SendStruct(SpawnActorInfo ActorInfo)
 	int SendInt;
 	int SendIntLength = sizeof(ActorInfo);
 	SendInt = send(_SocketConnected, (char*)&SendIntLength, sizeof(int), 0);
-	if (SendInt == SOCKET_ERROR)
-	{
-		std::cout << "Send Error" << std::endl;
-		exit(-1);
-	}
+
 	SendInt = send(_SocketConnected, (char*)&ActorInfo, sizeof(SpawnActorInfo), 0);
-	if (SendInt == SOCKET_ERROR)
-	{
-		std::cout << "Send Error" << std::endl;
-		exit(-1);
-	}
+
 }
 
 SpawnActorInfo TCP_Socket::ReciveStruct(SpawnActorInfo* ActorInfo)

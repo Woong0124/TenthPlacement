@@ -41,9 +41,7 @@ int main()
 
 	Socket->AcceptSocket();
 
-	Socket->SendStruct(a);
-
-
+	Socket->TSendStruct<SpawnActorInfo>(a);
 
 	SpawnActorInfo b;
 
@@ -51,11 +49,12 @@ int main()
 
 	char MSG[100] = {};
 	sprintf_s(MSG, "VALUES (%i,\"%s\",%i,%i,%i)", b.Key, b.Name, b.x, b.y, b.z);
-	cout << MSG;
 
 	sql->DataTableInsert(MSG);
 
-	Socket->SendStruct(a);
+	sql->Insert(a);
+
+	Socket->TSendStruct<SpawnActorInfo>(a);
 
 	Socket->ReciveSocket();
 
