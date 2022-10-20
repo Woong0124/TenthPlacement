@@ -11,6 +11,24 @@
 #include "Windows/HideWindowsPlatformTypes.h"
 #include "CoreMinimal.h"
 
+
+
+struct DataStruct
+{
+	int Key;
+	char ActorType[50];
+	float LocX;
+	float LocY;
+	float LocZ;
+
+	DataStruct()
+	{
+		memset(this, 0, sizeof(DataStruct));
+	};
+};
+
+
+
 /**
  * 
  */
@@ -30,4 +48,10 @@ public:
 
 	// 소켓 통신
 	bool CommunicateSocket();
+
+	// recv
+	DataStruct RecvStructSocket(DataStruct* DStruct);
+
+	// send
+	void SendStructSocket(DataStruct* DStruct);
 };

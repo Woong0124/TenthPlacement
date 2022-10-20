@@ -1,6 +1,7 @@
 #pragma once
 
 #include <mysql.h>
+#include "DataStruct.h"
 
 class MySocket
 {
@@ -23,9 +24,9 @@ public:
 	// Á¢¼Ó ½ÂÀÎ
 	bool AcceptSocket();
 
-	// Send
-	void SendSocket();
+	// Send Struct
+	void SendStructSocket(DataStruct* SpawnDataStruct);
 
-	// Recv
-	void RecvSocket();
+	// Recv Struct
+	DataStruct RecvStructSocket(DataStruct* SpawnDataStruct);
 };

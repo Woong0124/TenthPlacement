@@ -84,17 +84,24 @@ bool MySocket::AcceptSocket()
 	return true;
 }
 
-void MySocket::SendSocket()
+void MySocket::SendStructSocket(DataStruct* SpawnDataStruct)
 {
-	char Buffer[] = "abcd";
-	int SendBuffer = sizeof(Buffer);
-	SendBuffer = send(ClientSocket, Buffer, SendBuffer, 0);
-	if (SendBuffer == SOCKET_ERROR)
+	int SendInt;
+
+	SendInt = send(ClientSocket, (char*)SpawnDataStruct, sizeof(DataStruct), 0);
+	if (SendInt == SOCKET_ERROR)
 	{
 		std::cout << "Send Error" << std::endl;
+		exit(-1);
 	}
 }
 
-void MySocket::RecvSocket()
+DataStruct MySocket::RecvStructSocket(DataStruct* SpawnDataStruct)
 {
+	char Buffer[1024] = { 0, };
+	int Length = sizeof(Buffer);
+	recv(ClientSocket, Buffer, Length, 0);
+
+	SpawnDataStruct = (DataStruct*)Buffer;
+	return *SpawnDataStruct;
 }

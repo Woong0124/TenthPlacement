@@ -1,6 +1,7 @@
 #pragma once
 
 #include <mysql.h>
+#include "DataStruct.h"
 
 class MyDB
 {
@@ -31,6 +32,9 @@ public:
 
 	// 쿼리 결과 출력
 	bool QueryOutput();
+
+	// 쿼리 결과 구조체에 삽입
+	void QueryStructInsert(DataStruct* DStruct);
 
 	// 쿼리 초기화
 	void QueryInit();

@@ -19,7 +19,11 @@ public:
 	MySocket MySock;
 	bool SocketCheck;
 
+	DataStruct* MyDataStruct;
+
 	virtual void BeginPlay() override;
 
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason);
+
+	void MySpawnActor(DataStruct* DStruct);
 };

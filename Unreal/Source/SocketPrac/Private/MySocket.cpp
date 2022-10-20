@@ -62,7 +62,7 @@ bool MySocket::ConnectSocket()
 
 bool MySocket::CommunicateSocket()
 {
-	char Buffer[1024];
+	char Buffer[1024] = { 0, };
 	int BufferSize = sizeof(Buffer);
 	BufferSize = recv(ClientSocket, Buffer, BufferSize, 0);
 	if (BufferSize == SOCKET_ERROR)
@@ -74,4 +74,21 @@ bool MySocket::CommunicateSocket()
 	UE_LOG(LogTemp, Log, TEXT("%s"),&Buffer);
 	UE_LOG(LogTemp, Log, TEXT("Success : Socket Communicate"));
 	return true;
+}
+
+DataStruct MySocket::RecvStructSocket(DataStruct* DStruct)
+{
+	char Buffer[1024] = { 0, };
+	int Length = sizeof(Buffer);
+	recv(ClientSocket, Buffer, Length, 0);
+
+	DStruct = (DataStruct*)Buffer;
+	return *DStruct;
+}
+
+void MySocket::SendStructSocket(DataStruct* DStruct)
+{
+	int SendInt;
+
+	SendInt = send(ClientSocket, (char*)DStruct, sizeof(DataStruct), 0);
 }

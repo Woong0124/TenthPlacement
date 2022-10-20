@@ -1,5 +1,6 @@
 #include "MyDB.h"
 #include <iostream>
+#include <string>
 
 
 
@@ -74,6 +75,34 @@ bool MyDB::QueryOutput()
 	}
 
 	return true;
+}
+
+void MyDB::QueryStructInsert(DataStruct* DStruct)
+{
+	SqlResult = mysql_store_result(MySql);
+	SqlRow = mysql_fetch_row(SqlResult);
+
+	for (unsigned int i = 0; i < mysql_num_fields(SqlResult); ++i)
+	{
+		switch (i)
+		{
+		case 0:
+			DStruct->Key = std::stoi(SqlRow[i]);
+			break;
+		case 1:
+			strcpy_s(DStruct->ActorType, SqlRow[i]);
+			break;
+		case 2:
+			DStruct->LocX = std::stof(SqlRow[i]);
+			break;
+		case 3:
+			DStruct->LocY = std::stof(SqlRow[i]);
+			break;
+		case 4:
+			DStruct->LocZ = std::stof(SqlRow[i]);
+			break;
+		}
+	}
 }
 
 void MyDB::QueryInit()

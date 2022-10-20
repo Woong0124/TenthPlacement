@@ -61,17 +61,11 @@ int main()
 	// 쿼리 전달
 	MyDataBase->QueryTransmission("SELECT * FROM DATATABLE");
 
-	// 쿼리 출력
-	MyDataBase->QueryOutput();
-
-	// 쿼리 초기화
-	MyDataBase->QueryInit();
-
-
 
 	// 테스트 중
-	MySock->SendSocket();
-
+	DataStruct* a = new DataStruct;
+	MyDataBase->QueryStructInsert(a);
+	MySock->SendStructSocket(a);
 
 
 
