@@ -5,8 +5,10 @@
 
 #include "Windows/AllowWindowsPlatformTypes.h"
 #include "Windows/prewindowsapi.h"
+#define WIN32_LEAN_AND_MEAN
 #include <WinSock2.h>
 #include "Windows/PostWindowsApi.h"
+#include "Runtime/Core/Public/Math/Vector.h"
 #include "Windows/HideWindowsPlatformTypes.h"
 #include "CoreMinimal.h"
 
