@@ -40,14 +40,9 @@ int main()
 	Socket->ListenSocket();
 
 	Socket->AcceptSocket();
-	int g = 0;
+
 	while (true)
 	{
-		if (g < 1)
-		{
-			Socket->TSendStruct<SpawnActorInfo>(a);
-			++g;
-		}
 		Socket->SendSocket();
 	}
 	/*SpawnActorInfo b;

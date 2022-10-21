@@ -111,3 +111,13 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/Po
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/HideWindowsPlatformTypes.h
 C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source\Data\MyActor.h
 C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\MyActor.generated.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source\Data\DataGameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/AllowWindowsPlatformTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/prewindowsapi.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/PostWindowsApi.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/HideWindowsPlatformTypes.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\DataGameModeBase.generated.h

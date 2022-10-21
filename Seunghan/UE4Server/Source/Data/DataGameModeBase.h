@@ -12,6 +12,7 @@
 #include <WinSock2.h>
 #include "Runtime/Core/Public/Math/Vector.h"
 #include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
 
 
 #include "windows/PostWindowsApi.h"
@@ -29,7 +30,6 @@ class DATA_API ADataGameModeBase : public AGameModeBase
 public:
 
 	virtual void BeginPlay() override;
-
 private:
 	Socket _Sock;
 	bool IsConnected;

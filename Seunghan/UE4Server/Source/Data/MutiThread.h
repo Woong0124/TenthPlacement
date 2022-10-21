@@ -2,6 +2,7 @@
 
 #pragma once
 
+
 #include "CoreMinimal.h"
 
 /**
@@ -19,8 +20,7 @@ public:
 	bool Init() override; // Do your setup here, allocate memory, ect.
 	uint32 Run() override; // Main data processing happens here
 	void Stop() override; // Clean up any memory you allocated here
-
-
+	
 private:
 
 	// Thread handle. Control the thread using this, with operators like Kill and Suspend

@@ -4,12 +4,11 @@
 #include "MutiThread.h"
 #include "Socket.h"
 #include "MyActor.h"
+#include "DataGameModeBase.h"
 
 #define PORT	4000
 #define PACKED_SIZE 1024
 #define SERVER_IP	"192.168.0.178"
-
-
 
 #pragma region Main Thread Code
 // This code will be run on the thread that invoked this thread (i.e. game thread)
@@ -19,6 +18,7 @@ MultiThread::MultiThread()
 	// If you've passed in any inputs, set them up before calling this.
 	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
 }
+
 
 MultiThread::~MultiThread()
 {
@@ -56,10 +56,10 @@ uint32 MultiThread::Run()
 	while (bRunThread)
 	{
 		
-			FPlatformProcess::Sleep(1.0f);
+		FPlatformProcess::Sleep(1.0f);
 		
 		FString MSG = _Sock->ReciveSocket();
-		UE_LOG(LogTemp, Warning, TEXT("Recive MSG : %s"), *MSG)
+		UE_LOG(LogTemp, Warning, TEXT("Recive MSG : %s"), *MSG);
 	}
 
 	delete _Sock;
