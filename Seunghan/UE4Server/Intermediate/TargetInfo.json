@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Data",
-			"Path": "C:\\Work\\Data\\Source\\Data.Target.cs",
+			"Path": "C:\\Users\\seunghan\\Desktop\\TenthPlacement\\Seunghan\\UE4Server\\Source\\Data.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "DataEditor",
-			"Path": "C:\\Work\\Data\\Source\\DataEditor.Target.cs",
+			"Path": "C:\\Users\\seunghan\\Desktop\\TenthPlacement\\Seunghan\\UE4Server\\Source\\DataEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

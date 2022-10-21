@@ -5,6 +5,11 @@
 #include "Socket.h"
 #include <iostream>
 #include <string>
+#include "MyActor.h"
+#include "GameFramework/Actor.h"
+#include "Kismet/GameplayStatics.h"
+#include "MutiThread.h"
+#include "GameFramework/Actor.h"
 using namespace std;
 
 #define PORT	4000
@@ -13,14 +18,11 @@ using namespace std;
 
 
 
+
 void ADataGameModeBase::BeginPlay()
 {
-	SpawnActorInfo a;
-	_Sock.InitSocket();
-	_Sock.CreatSocket();
-	_Sock.ConnectSocket(SERVER_IP, PORT);
+	MultiThread* Worker = new MultiThread();
 
-	_Sock.ReciveStruct(&a);
-	
-	UE_LOG(LogTemp, Log, TEXT("Begin Event : %i"), a.Key);
+	//SpawnActorInfo ActorInfo(3, "real", 300, 140, 600);
+	//_Sock.TSendStruct<SpawnActorInfo>(ActorInfo);
 }

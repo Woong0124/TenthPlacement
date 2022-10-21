@@ -19,10 +19,8 @@ using namespace std;
 
 int main()
 {
-
-
 	MySQL* sql = new MySQL;
-
+	
 	SpawnActorInfo a;
 
 	sql->ConncetMySQL();
@@ -30,13 +28,6 @@ int main()
 	sql->RecQueryResult();
 
 	sql->Insert(a);
-
-	cout << a.Key << endl;
-	cout << a.Name << endl;
-	cout << a.VectorInfo.x << endl;
-	cout << a.VectorInfo.y << endl;
-	cout << a.VectorInfo.z << endl;
-
 
 	TCP_Socket* Socket = new TCP_Socket;
 
@@ -50,12 +41,19 @@ int main()
 
 	Socket->AcceptSocket();
 
-	Socket->SendStruct(a);
+	while (true)
+	{
+		Socket->SendSocket();
+	}
+	/*SpawnActorInfo b;
+	b = Socket->ReciveStruct(&b);
 
-	Socket->ReciveSocket();
+	char MSG[100] = {};
+	sprintf_s(MSG, "VALUES (%i,\"%s\",%i,%i,%i)", b.Key, b.Name, b.x, b.y, b.z);
 
+	sql->DataTableInsert(MSG);*/
+	
 	mysql_free_result(sql->mysqlResult);
-
 	delete Socket;
 	delete sql;
 

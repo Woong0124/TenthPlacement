@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define DATA_MyActor_generated_h
 
-#define Data_Source_Data_MyActor_h_12_SPARSE_DATA
-#define Data_Source_Data_MyActor_h_12_RPC_WRAPPERS
-#define Data_Source_Data_MyActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define Data_Source_Data_MyActor_h_12_INCLASS_NO_PURE_DECLS \
+#define UE4Server_Source_Data_MyActor_h_12_SPARSE_DATA
+#define UE4Server_Source_Data_MyActor_h_12_RPC_WRAPPERS
+#define UE4Server_Source_Data_MyActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define UE4Server_Source_Data_MyActor_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyActor(); \
 	friend struct Z_Construct_UClass_AMyActor_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AMyActor)
 
 
-#define Data_Source_Data_MyActor_h_12_INCLASS \
+#define UE4Server_Source_Data_MyActor_h_12_INCLASS \
 private: \
 	static void StaticRegisterNativesAMyActor(); \
 	friend struct Z_Construct_UClass_AMyActor_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AMyActor)
 
 
-#define Data_Source_Data_MyActor_h_12_STANDARD_CONSTRUCTORS \
+#define UE4Server_Source_Data_MyActor_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMyActor(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMyActor) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Data_Source_Data_MyActor_h_12_ENHANCED_CONSTRUCTORS \
+#define UE4Server_Source_Data_MyActor_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMyActor(AMyActor&&); \
@@ -58,28 +58,28 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMyActor)
 
 
-#define Data_Source_Data_MyActor_h_12_PRIVATE_PROPERTY_OFFSET
-#define Data_Source_Data_MyActor_h_9_PROLOG
-#define Data_Source_Data_MyActor_h_12_GENERATED_BODY_LEGACY \
+#define UE4Server_Source_Data_MyActor_h_12_PRIVATE_PROPERTY_OFFSET
+#define UE4Server_Source_Data_MyActor_h_9_PROLOG
+#define UE4Server_Source_Data_MyActor_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Data_Source_Data_MyActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	Data_Source_Data_MyActor_h_12_SPARSE_DATA \
-	Data_Source_Data_MyActor_h_12_RPC_WRAPPERS \
-	Data_Source_Data_MyActor_h_12_INCLASS \
-	Data_Source_Data_MyActor_h_12_STANDARD_CONSTRUCTORS \
+	UE4Server_Source_Data_MyActor_h_12_PRIVATE_PROPERTY_OFFSET \
+	UE4Server_Source_Data_MyActor_h_12_SPARSE_DATA \
+	UE4Server_Source_Data_MyActor_h_12_RPC_WRAPPERS \
+	UE4Server_Source_Data_MyActor_h_12_INCLASS \
+	UE4Server_Source_Data_MyActor_h_12_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Data_Source_Data_MyActor_h_12_GENERATED_BODY \
+#define UE4Server_Source_Data_MyActor_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Data_Source_Data_MyActor_h_12_PRIVATE_PROPERTY_OFFSET \
-	Data_Source_Data_MyActor_h_12_SPARSE_DATA \
-	Data_Source_Data_MyActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	Data_Source_Data_MyActor_h_12_INCLASS_NO_PURE_DECLS \
-	Data_Source_Data_MyActor_h_12_ENHANCED_CONSTRUCTORS \
+	UE4Server_Source_Data_MyActor_h_12_PRIVATE_PROPERTY_OFFSET \
+	UE4Server_Source_Data_MyActor_h_12_SPARSE_DATA \
+	UE4Server_Source_Data_MyActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	UE4Server_Source_Data_MyActor_h_12_INCLASS_NO_PURE_DECLS \
+	UE4Server_Source_Data_MyActor_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -87,7 +87,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> DATA_API UClass* StaticClass<class AMyActor>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Data_Source_Data_MyActor_h
+#define CURRENT_FILE_ID UE4Server_Source_Data_MyActor_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

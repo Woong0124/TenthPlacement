@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Data.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{71FAA070-00E1-49B6-B4FC-BAC895314A6B}</UniqueIdentifier>
+      <UniqueIdentifier>{55B6B872-0645-4F19-BC91-54497309DA8A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Data.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{91FF59B6-5C78-455D-A91B-17A28262A7E4}</UniqueIdentifier>
+      <UniqueIdentifier>{A55D5B42-7FD8-47B6-B0CE-45741B6BEB3E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,7 +24,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Data">
-      <UniqueIdentifier>{71BEEC00-1CE9-4B9E-A7F2-EF59667503D7}</UniqueIdentifier>
+      <UniqueIdentifier>{4D41F9A5-8698-40A8-B2E6-D340829B8B8E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Data\Data.Build.cs">
       <Filter>Source\Data</Filter>
@@ -39,6 +39,12 @@
       <Filter>Source\Data</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Data\DataGameModeBase.h">
+      <Filter>Source\Data</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Data\MutiThread.cpp">
+      <Filter>Source\Data</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Data\MutiThread.h">
       <Filter>Source\Data</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Data\MyActor.cpp">
