@@ -146,13 +146,11 @@
   <ItemGroup>
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyDB.cpp" />
     <ClCompile Include="MySocket.cpp" />
     <ClCompile Include="Mysql.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
-    <ClInclude Include="MyDB.h" />
     <ClInclude Include="MySocket.h" />
     <ClInclude Include="Mysql.h" />
   </ItemGroup>

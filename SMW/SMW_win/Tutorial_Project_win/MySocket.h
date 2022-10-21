@@ -47,4 +47,32 @@ public:
 
 	// 구조체 받기
 	SpawnActorInfo ReciveStruct(SpawnActorInfo* ActorInfo);
+
+	template<typename T> //템플릿은 헤더에 정의. cpp에 하면 못찾음. 
+	void TSendStruct(T Struct);
+
+	template<typename T>
+	T TReciveStruct(T* Struct);
 };
+
+template<typename T>
+inline void MySocket::TSendStruct(T Struct)
+{
+	int SendInt;
+	int SendIntLength = sizeof(Struct);
+	SendInt = send(CToSSocket, (char*)&SendIntLength, sizeof(int), 0);
+
+	SendInt = send(CToSSocket, (char*)&Struct, sizeof(Struct), 0);
+
+}
+template<typename T>
+inline T MySocket::TReciveStruct(T* Struct)
+{
+	int len;
+	recv(CToSSocket, (char*)&len, sizeof(int), 0);
+	char Buffer[1024] = { 0, };
+	recv(CToSSocket, Buffer, len, 0);
+	Struct = (T*)Buffer;
+
+	return *Struct;
+}

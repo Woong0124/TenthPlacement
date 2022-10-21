@@ -8,12 +8,14 @@
 
 MySocket::MySocket()
 {
-	ClientSocket = INVALID_SOCKET;
+	_Socket = INVALID_SOCKET;
+	_SocketConnected = INVALID_SOCKET
 }
 
 MySocket::~MySocket()
 {
-	closesocket(ClientSocket);
+	closesocket(_Socket);
+	closesocket(_SocketConnected);
 	WSACleanup();
 }
 
@@ -28,8 +30,13 @@ bool MySocket::InitSocket()
 	}
 
 	
-	ClientSocket = socket(AF_INET, SOCK_STREAM, 0);
-	if (ClientSocket == INVALID_SOCKET)
+	
+}
+
+bool MySocket::CreateSocket()
+{
+	_Socket = socket(AF_INET, SOCK_STREAM, 0);
+	if (_Socket == INVALID_SOCKET)
 	{
 		UE_LOG(LogTemp, Log, TEXT("Error : Socket Create"));
 		return false;
@@ -37,9 +44,10 @@ bool MySocket::InitSocket()
 
 	UE_LOG(LogTemp, Log, TEXT("Success : Socket Load"));
 	return true;
+
 }
 
-bool MySocket::ConnectSocket()
+bool MySocket::ConnectSocket(const char* _ServerIP, int _ConnectPort)
 {
 	
 	SOCKADDR_IN ServerSOCKADDR;
@@ -49,7 +57,7 @@ bool MySocket::ConnectSocket()
 	ServerSOCKADDR.sin_port = htons(PORT);
 
 	
-	int Result = connect(ClientSocket, (SOCKADDR*)&ServerSOCKADDR, sizeof(SOCKADDR_IN));
+	int Result = connect(_Socket, (SOCKADDR*)&ServerSOCKADDR, sizeof(SOCKADDR_IN));
 	if (Result == SOCKET_ERROR)
 	{
 		UE_LOG(LogTemp, Log, TEXT("Error : Socket Connect"));
@@ -60,18 +68,35 @@ bool MySocket::ConnectSocket()
 	return true;
 }
 
-bool MySocket::CommunicateSocket()
+bool MySocket::SendSocket()
 {
-	char Buffer[1024];
-	int BufferSize = sizeof(Buffer);
-	BufferSize = recv(ClientSocket, Buffer, BufferSize, 0);
-	if (BufferSize == SOCKET_ERROR)
+	char Buffer[] = "Nunu";
+	int SendBytes = send(_Socket, Buffer, sizeof(Buffer), 0);
+	FString MSG = Buffer;
+
+	UE_LOG(LogTemp, Log, TEXT("Send MSG : % s"), *(MSG));
+
+	if (SendBytes <= 0)
 	{
-		UE_LOG(LogTemp, Log, TEXT("Error : Socket Communicate"));
+		UE_LOG(LogTemp, Log, TEXT("Winsock Error : %s"), GetLastError());
 		return false;
 	}
-
-	UE_LOG(LogTemp, Log, TEXT("%s"), &Buffer);
-	UE_LOG(LogTemp, Log, TEXT("Success : Socket Communicate"));
 	return true;
+}
+
+FString MySocket::ReciveSocket()
+{
+	char Buffer[1024] = { 0, };
+	int RecvBytes = recv(_Socket, Buffer, 1024, 0);
+	FString MSG = Buffer;
+
+	UE_LOG(LogTemp, Log, TEXT("Recive MSG : %s"), *(MSG));
+
+	if (RecvBytes <= 0)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Winsock Error : %s"), GetLastError());
+		
+	}
+	return MSG;
+	
 }

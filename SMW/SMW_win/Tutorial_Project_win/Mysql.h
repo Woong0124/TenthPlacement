@@ -33,5 +33,7 @@ public:
 	void OutResult();
 
 	void Insert(SpawnActorInfo& ActorInfo);
+
+	void DataTableInsert(const char* value);
 };
 

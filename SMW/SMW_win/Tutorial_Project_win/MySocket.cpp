@@ -4,7 +4,7 @@
 #define PORT 3307
 
 MySocket::MySocket()
-{
+{ 
 	ServerSocket = INVALID_SOCKET;
 	ClientSocket = INVALID_SOCKET;
 }

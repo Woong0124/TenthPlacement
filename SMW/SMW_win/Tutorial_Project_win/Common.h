@@ -5,8 +5,8 @@
 
 struct SpawnActorInfo
 {
-	int Key;
-	char Name[10];
+	int ID;
+	char ActorType[10];
 	int x;
 	int y;
 	int z;

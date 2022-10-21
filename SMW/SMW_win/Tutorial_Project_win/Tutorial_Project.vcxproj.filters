@@ -21,9 +21,6 @@
     <ClCompile Include="Mysql.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MyDB.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="MySocket.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -36,9 +33,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="MySocket.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MyDB.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Common.h">

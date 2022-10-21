@@ -10,7 +10,7 @@ using namespace std;
 
 #define PORT	3307
 #define PACKED_SIZE 1024
-#define SERVER_IP	"192.168.0.178"
+#define SERVER_IP	"192.168.0.177"
 
 struct FVector
 {
@@ -21,8 +21,8 @@ struct FVector
 
 struct SpawnActorInfo
 {
-	int Key;
-	std::string Name;
+	int ID;
+	std::string ActorType;
 	FVector VectorInfo;
 };
 
@@ -76,8 +76,8 @@ int main()
 	Buffer[as] = '\0';
 	a = (SpawnActorInfo*)Buffer;
 
-	cout << a->Key << endl;
-	cout << a->Name << endl;
+	cout << a->ID << endl;
+	cout << a->ActorType << endl;
 	cout << a->VectorInfo.x << endl;
 	cout << a->VectorInfo.y << endl;
 	cout << a->VectorInfo.z << endl;

@@ -24,32 +24,50 @@ int main()
 
 	SpawnActorInfo a;
 
+	SpawnActorInfo b;
+
 	sql->ConncetMySQL();
+	
 
 	sql->RecQueryResult();
 
 	sql->Insert(a);
 
-	cout << a.Key << endl;
-	cout << a.Name << endl;
-	cout << a.VectorInfo.x << endl;
-	cout << a.VectorInfo.y << endl;
-	cout << a.VectorInfo.z << endl;
+	cout << a.ID << endl;
+	cout << a.ActorType << endl;
+	cout << a.x << endl;
+	cout << a.y << endl;
+	cout << a.z << endl;
 
 
 	MySocket* Socket = new MySocket;
 
+	Socket->InitSocket();
 
 	Socket->CreateSocket();
 
 
-	Socket->BindListenSocket();
+	Socket->BindSocket(MyIP,3307);
+
+	Socket->ListenSocket();
 
 	Socket->AcceptSocket();
 
-	Socket->SendSocket();
+	Socket->TSendStruct<SpawnActorInfo>(a);
+
+	b = Socket->ReciveStruct(&b);
+
+	char MSG[100] = {};
+	sprintf_s(MSG, "VALUES (%i, \"%s\",%i, %i, %i)", b.ID, b.ActorType, b.x, b.y, b.z);
+
+	sql->DataTableInsert(MSG);
+
+	sql->Insert(a);
+
+	Socket->TSendStruct<SpawnActorInfo>(a);
 
 	Socket->RecvSocket();
+
 
 	mysql_free_result(sql->mysqlResult);
 

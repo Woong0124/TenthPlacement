@@ -21,12 +21,12 @@ MySQL::~MySQL()
 
 bool MySQL::ConncetMySQL()
 {	// 데이터 베이스와 연결
-	ConnPtr = mysql_real_connect(&conn, "localhost", "root", "smwbs1570", "tutorial", 3307, NULL, 0);
+	ConnPtr = mysql_real_connect(&conn, "localhost", "root", "smwbs1570", "tutorial", 3306, NULL, 0);
 
 	// 연결 결과 확인 Null일 경우 실패
 	if (ConnPtr == NULL)
 	{
-		std::cout << stderr << "Mysql Connection Error : " << mysql_error(&conn);
+		std::cout << stderr << "Mysql Connection Error : 1 " << mysql_error(&conn);
 		return false;
 	}
 
@@ -40,7 +40,7 @@ bool MySQL::RecQueryResult()
 	Stat = mysql_query(ConnPtr, Query);
 	if (Stat != 0)
 	{
-		std::cout << stderr << "Mysql Connection Error : " << mysql_error(&conn);
+		std::cout << stderr << "Mysql Connection Error : 2 " << mysql_error(&conn);
 		return false;
 	}
 
@@ -73,23 +73,31 @@ void MySQL::Insert(SpawnActorInfo& ActorInfo)
 		switch (i)
 		{
 		case 0:
-			ActorInfo.Key = stoi(Row[i]);
+			ActorInfo.ID = stoi(Row[i]);
 			break;
 		case 1:
-			ActorInfo.Name = Row[i];
+			strcpy_s(ActorInfo.ActorType, Row[i]);
 			break;
 		case 2:
-			ActorInfo.VectorInfo.x = stoi(Row[i]);
+			ActorInfo.x = stoi(Row[i]);
 			break;
 		case 3:
-			ActorInfo.VectorInfo.y = stoi(Row[i]);
+			ActorInfo.y = stoi(Row[i]);
 			break;
 		case 4:
-			ActorInfo.VectorInfo.z = stoi(Row[i]);
+			ActorInfo.z = stoi(Row[i]);
 			break;
 
 		}
 
 
 	}
+}
+
+void MySQL::DataTableInsert(const char* value)
+{
+	char InsertQuery[100] = "insert into tosocketdb ";
+	strcat_s(InsertQuery, value);
+	cout << InsertQuery << endl;
+	mysql_query(ConnPtr, InsertQuery);
 }

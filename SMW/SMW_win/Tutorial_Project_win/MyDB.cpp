@@ -7,7 +7,7 @@
 #define User "root"
 #define PW "smwbs1570"
 #define DB "tutorial"
-#define Port 3307
+#define Port 3306
 
 
 
