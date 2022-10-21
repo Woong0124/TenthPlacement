@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
 	MySQL* sql = new MySQL;
-
+	
 	SpawnActorInfo a;
 
 	sql->ConncetMySQL();
@@ -40,26 +40,25 @@ int main()
 	Socket->ListenSocket();
 
 	Socket->AcceptSocket();
-
-	Socket->TSendStruct<SpawnActorInfo>(a);
-
-	SpawnActorInfo b;
-
+	int g = 0;
+	while (true)
+	{
+		if (g < 1)
+		{
+			Socket->TSendStruct<SpawnActorInfo>(a);
+			++g;
+		}
+		Socket->SendSocket();
+	}
+	/*SpawnActorInfo b;
 	b = Socket->ReciveStruct(&b);
 
 	char MSG[100] = {};
 	sprintf_s(MSG, "VALUES (%i,\"%s\",%i,%i,%i)", b.Key, b.Name, b.x, b.y, b.z);
 
-	sql->DataTableInsert(MSG);
-
-	sql->Insert(a);
-
-	Socket->TSendStruct<SpawnActorInfo>(a);
-
-	Socket->ReciveSocket();
-
+	sql->DataTableInsert(MSG);*/
+	
 	mysql_free_result(sql->mysqlResult);
-
 	delete Socket;
 	delete sql;
 

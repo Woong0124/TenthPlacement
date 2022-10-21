@@ -65,8 +65,8 @@ inline void TCP_Socket::TSendStruct(T Struct)
 {
 	int SendInt;
 	int SendIntLength = sizeof(Struct);
-	SendInt = send(_SocketConnected, (char*)&SendIntLength, sizeof(int), 0);
 
+	SendInt = send(_SocketConnected, (char*)&SendIntLength, sizeof(int), 0);
 	SendInt = send(_SocketConnected, (char*)&Struct, sizeof(Struct), 0);
 }
 
@@ -74,9 +74,9 @@ template<typename T>
 inline T TCP_Socket::TReciveStruct(T* Struct)
 {
 	int		len = 0;
-	recv(_SocketConnected, (char*)&len, sizeof(int), 0);
-
 	char	Buffer[1024] = { 0, };
+	
+	recv(_SocketConnected, (char*)&len, sizeof(int), 0);
 	recv(_SocketConnected, Buffer, len, 0);
 
 	Struct = (T*)Buffer;

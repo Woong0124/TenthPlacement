@@ -60,7 +60,7 @@ bool TCP_Socket::CreatSocket()
 	// PF_INET은 IPV4 타입을 만들것이고, SOCK_STREAM은 빨대를 만들어 연결 지향적 소켓을 만들겠다는 의미이다.
 	// 마지막 인자는 protocol 즉 통신 규약이 들어간다. TCP를 사용함으로 IPPROTOCOL_TCP를 사용한다고 지정한다.
 
-	_Socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+	_Socket = socket(PF_INET, SOCK_STREAM, 0);
 	if (_Socket == INVALID_SOCKET) // 직역하면 유효하지 않은 소켓.
 	{
 		std::cout << " fail create Socket : " << GetLastError() << std::endl; // 마지막 에러 문제 확인
@@ -181,7 +181,7 @@ bool TCP_Socket::ConnectSocket(const char* _ServerIP, int _ConnectPort)
 
 bool TCP_Socket::SendSocket()
 {
-	char	Buffer[] = "Bring Me The Thanos";
+	char	Buffer[] = "1";
 
 	int SendBytes = send(_SocketConnected, Buffer, sizeof(Buffer), 0);
 

@@ -17,6 +17,17 @@
 /**
  * 
  */
+enum class Header
+{
+	None,
+	ActorInfo,
+};
+
+struct Packing
+{
+
+};
+
 
 struct SpawnActorInfo
 {
@@ -65,18 +76,17 @@ public:
 	bool SendSocket();
 
 	// 데이터 받음
-	bool ReciveSocket();
+	FString ReciveSocket();
 
-	// 구조체 받기
-	SpawnActorInfo ReciveStruct(SpawnActorInfo* _ActorInfo);
-
-	void SendStruct(SpawnActorInfo _ActorInfo);
-
-	template<typename T>
-	T TReciveStruct(T* _ActorInfo);
+	//// 구조체 받기
+	//SpawnActorInfo ReciveStruct(SpawnActorInfo* _ActorInfo);
+	//void SendStruct(SpawnActorInfo _ActorInfo);
 
 	template<typename T>
-	void TSendStruct(T _ActorInfo);
+	T TReciveStruct(T* _Struct);
+
+	template<typename T>
+	void TSendStruct(T _Struct);
 
 	SOCKET _Socket;
 

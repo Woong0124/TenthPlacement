@@ -22,6 +22,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void Move(int X);
 
 private:
 	class UStaticMeshComponent* SM;
