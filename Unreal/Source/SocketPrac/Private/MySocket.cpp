@@ -2,6 +2,7 @@
 
 
 #include "MySocket.h"
+#include "SocketPracGameModeBase.h"
 
 #define CP "127.0.0.1"
 #define PORT 3307
@@ -9,6 +10,7 @@
 MySocket::MySocket()
 {
 	ClientSocket = INVALID_SOCKET;
+	MyDataStruct = new DataStruct;
 }
 
 MySocket::~MySocket()
@@ -16,6 +18,56 @@ MySocket::~MySocket()
 	closesocket(ClientSocket);
 	WSACleanup();
 }
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+MySocket::MySocket(ASocketPracGameModeBase* MyGameMode)
+{
+	ClientSocket = INVALID_SOCKET;
+	MyDataStruct = new DataStruct;
+	MyGM = MyGameMode;
+}
+
+bool MySocket::Init()
+{
+	CheckThread = InitSocket();
+	if (CheckThread == false)
+	{
+		return false;
+	}
+	CheckThread = ConnectSocket();
+	if (CheckThread == false)
+	{
+		return false;
+	}
+	return true;
+}
+
+uint32 MySocket::Run()
+{
+	*MyDataStruct = RecvStructSocket(MyDataStruct);
+	MyGM->MySpawnActor(MyDataStruct);
+	*MyDataStruct = RecvStructSocket(MyDataStruct);
+	MyGM->MySpawnActor(MyDataStruct);
+	while (true)
+	{
+		char Buffer[1024] = { 0, };
+		int BufferSize = sizeof(Buffer);
+		BufferSize = recv(ClientSocket, Buffer, BufferSize, 0);
+		UE_LOG(LogTemp, Log, TEXT("%s"), &Buffer);
+	}
+	return uint32();
+}
+
+void MySocket::Exit()
+{
+}
+
+void MySocket::Stop()
+{
+}
+////////////////////////////////////////////////
+////////////////////////////////////////////////
 
 bool MySocket::InitSocket()
 {

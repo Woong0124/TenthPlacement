@@ -11,11 +11,16 @@
 #include "Windows/HideWindowsPlatformTypes.h"
 #include "CoreMinimal.h"
 
-
+enum ActiveInfo
+{
+	SpawnActor = 1,
+	MoveActor = 2
+};
 
 struct DataStruct
 {
 	int Key;
+	ActiveInfo AInfo;
 	char ActorType[50];
 	float LocX;
 	float LocY;
@@ -29,16 +34,36 @@ struct DataStruct
 
 
 
+class ASocketPracGameModeBase;
+
 /**
  * 
  */
-class SOCKETPRAC_API MySocket
+class SOCKETPRAC_API MySocket : public FRunnable
 {
 public:
 	MySocket();
 	~MySocket();
 
+
+	////////////////////////////////////////////////
+	////////////////////////////////////////////////
+	MySocket(ASocketPracGameModeBase* MyGameMode);
+
+	// Thread
+	virtual bool Init() override;
+	virtual uint32 Run() override;
+	virtual void Exit() override;
+	virtual void Stop() override;
+
+	bool CheckThread = false;
+	ASocketPracGameModeBase* MyGM;
+	////////////////////////////////////////////////
+	////////////////////////////////////////////////
+
+
 	SOCKET ClientSocket;
+	DataStruct* MyDataStruct;
 
 	// 소켓 초기화
 	bool InitSocket();
@@ -54,4 +79,5 @@ public:
 
 	// send
 	void SendStructSocket(DataStruct* DStruct);
+
 };

@@ -58,16 +58,29 @@ int main()
 
 
 
-	// 쿼리 전달
+	DataStruct* DStruct = new DataStruct; 
+
 	MyDataBase->QueryTransmission("SELECT * FROM DATATABLE");
+
+	while ((MyDataBase->SqlRow = mysql_fetch_row(MyDataBase->SqlResult)) != NULL)
+	{
+		DStruct->AInfo = SpawnActor;
+		MyDataBase->QueryStructInsert(DStruct);
+		MySock->SendStructSocket(DStruct);
+	}
+
 
 
 	// 테스트 중
-	DataStruct* a = new DataStruct;
-	MyDataBase->QueryStructInsert(a);
-	MySock->SendStructSocket(a);
+	while (true)
+	{
+		char Buffer[1024] = "1";
+		send(MySock->ClientSocket, (char*)Buffer, sizeof(Buffer), 0);
+	}
 
 
+
+	delete DStruct;
 
 	// 소켓 해제
 	delete MySock;

@@ -56,14 +56,14 @@ bool MyDB::QueryTransmission(const char* Value)
 		return false;
 	}
 
+	SqlResult = mysql_store_result(MySql);
+	//SqlRow = mysql_fetch_row(SqlResult);
+
 	return true;
 }
 
 bool MyDB::QueryOutput()
 {
-	// Query 요청 결과 저장
-	SqlResult = mysql_store_result(MySql);
-
 	// Query 결과 출력
 	while ((SqlRow = mysql_fetch_row(SqlResult)) != NULL)
 	{
@@ -79,9 +79,6 @@ bool MyDB::QueryOutput()
 
 void MyDB::QueryStructInsert(DataStruct* DStruct)
 {
-	SqlResult = mysql_store_result(MySql);
-	SqlRow = mysql_fetch_row(SqlResult);
-
 	for (unsigned int i = 0; i < mysql_num_fields(SqlResult); ++i)
 	{
 		switch (i)
@@ -103,6 +100,7 @@ void MyDB::QueryStructInsert(DataStruct* DStruct)
 			break;
 		}
 	}
+	//SqlRow = mysql_fetch_row(SqlResult);
 }
 
 void MyDB::QueryInit()
