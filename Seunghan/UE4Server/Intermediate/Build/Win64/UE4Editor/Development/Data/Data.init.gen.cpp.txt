@@ -1,3 +1,3 @@
-C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h

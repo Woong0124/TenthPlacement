@@ -1,16 +1,13 @@
 #pragma once
 #include <string>
 
-struct MyFVector
-{
-	int x;
-	int y;
-	int z;
-};
-
 struct SpawnActorInfo
 {
 	int Key;
-	std::string Name;
-	MyFVector VectorInfo;
+	char Name[10];
+	int x;
+	int y;
+	int z;
+
+	SpawnActorInfo() { memset(this, 0, sizeof(SpawnActorInfo)); };
 };

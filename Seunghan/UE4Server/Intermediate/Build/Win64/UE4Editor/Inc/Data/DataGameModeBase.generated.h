@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define DATA_DataGameModeBase_generated_h
 
-#define Data_Source_Data_DataGameModeBase_h_26_SPARSE_DATA
-#define Data_Source_Data_DataGameModeBase_h_26_RPC_WRAPPERS
-#define Data_Source_Data_DataGameModeBase_h_26_RPC_WRAPPERS_NO_PURE_DECLS
-#define Data_Source_Data_DataGameModeBase_h_26_INCLASS_NO_PURE_DECLS \
+#define UE4Server_Source_Data_DataGameModeBase_h_29_SPARSE_DATA
+#define UE4Server_Source_Data_DataGameModeBase_h_29_RPC_WRAPPERS
+#define UE4Server_Source_Data_DataGameModeBase_h_29_RPC_WRAPPERS_NO_PURE_DECLS
+#define UE4Server_Source_Data_DataGameModeBase_h_29_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADataGameModeBase(); \
 	friend struct Z_Construct_UClass_ADataGameModeBase_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ADataGameModeBase)
 
 
-#define Data_Source_Data_DataGameModeBase_h_26_INCLASS \
+#define UE4Server_Source_Data_DataGameModeBase_h_29_INCLASS \
 private: \
 	static void StaticRegisterNativesADataGameModeBase(); \
 	friend struct Z_Construct_UClass_ADataGameModeBase_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ADataGameModeBase)
 
 
-#define Data_Source_Data_DataGameModeBase_h_26_STANDARD_CONSTRUCTORS \
+#define UE4Server_Source_Data_DataGameModeBase_h_29_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ADataGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ADataGameModeBase) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Data_Source_Data_DataGameModeBase_h_26_ENHANCED_CONSTRUCTORS \
+#define UE4Server_Source_Data_DataGameModeBase_h_29_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ADataGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +60,28 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ADataGameModeBase)
 
 
-#define Data_Source_Data_DataGameModeBase_h_26_PRIVATE_PROPERTY_OFFSET
-#define Data_Source_Data_DataGameModeBase_h_23_PROLOG
-#define Data_Source_Data_DataGameModeBase_h_26_GENERATED_BODY_LEGACY \
+#define UE4Server_Source_Data_DataGameModeBase_h_29_PRIVATE_PROPERTY_OFFSET
+#define UE4Server_Source_Data_DataGameModeBase_h_26_PROLOG
+#define UE4Server_Source_Data_DataGameModeBase_h_29_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Data_Source_Data_DataGameModeBase_h_26_PRIVATE_PROPERTY_OFFSET \
-	Data_Source_Data_DataGameModeBase_h_26_SPARSE_DATA \
-	Data_Source_Data_DataGameModeBase_h_26_RPC_WRAPPERS \
-	Data_Source_Data_DataGameModeBase_h_26_INCLASS \
-	Data_Source_Data_DataGameModeBase_h_26_STANDARD_CONSTRUCTORS \
+	UE4Server_Source_Data_DataGameModeBase_h_29_PRIVATE_PROPERTY_OFFSET \
+	UE4Server_Source_Data_DataGameModeBase_h_29_SPARSE_DATA \
+	UE4Server_Source_Data_DataGameModeBase_h_29_RPC_WRAPPERS \
+	UE4Server_Source_Data_DataGameModeBase_h_29_INCLASS \
+	UE4Server_Source_Data_DataGameModeBase_h_29_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Data_Source_Data_DataGameModeBase_h_26_GENERATED_BODY \
+#define UE4Server_Source_Data_DataGameModeBase_h_29_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Data_Source_Data_DataGameModeBase_h_26_PRIVATE_PROPERTY_OFFSET \
-	Data_Source_Data_DataGameModeBase_h_26_SPARSE_DATA \
-	Data_Source_Data_DataGameModeBase_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
-	Data_Source_Data_DataGameModeBase_h_26_INCLASS_NO_PURE_DECLS \
-	Data_Source_Data_DataGameModeBase_h_26_ENHANCED_CONSTRUCTORS \
+	UE4Server_Source_Data_DataGameModeBase_h_29_PRIVATE_PROPERTY_OFFSET \
+	UE4Server_Source_Data_DataGameModeBase_h_29_SPARSE_DATA \
+	UE4Server_Source_Data_DataGameModeBase_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
+	UE4Server_Source_Data_DataGameModeBase_h_29_INCLASS_NO_PURE_DECLS \
+	UE4Server_Source_Data_DataGameModeBase_h_29_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -89,7 +89,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> DATA_API UClass* StaticClass<class ADataGameModeBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Data_Source_Data_DataGameModeBase_h
+#define CURRENT_FILE_ID UE4Server_Source_Data_DataGameModeBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

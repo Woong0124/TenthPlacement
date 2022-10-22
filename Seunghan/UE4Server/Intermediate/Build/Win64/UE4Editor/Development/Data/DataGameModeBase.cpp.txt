@@ -1,6 +1,6 @@
-C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h
-C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Source\Data\DataGameModeBase.h
-C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Source\Data\Socket.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source\Data\DataGameModeBase.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source\Data\Socket.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/AllowWindowsPlatformTypes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/WindowsHWrapper.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h
@@ -117,7 +117,7 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/Al
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/prewindowsapi.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/PostWindowsApi.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\windows/HideWindowsPlatformTypes.h
-C:\Users\seunghan\Desktop\DB_Socket_UE\Data\Intermediate\Build\Win64\UE4Editor\Inc\Data\DataGameModeBase.generated.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\DataGameModeBase.generated.h
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\iostream
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\istream
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\ostream
@@ -151,3 +151,15 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\clocale
 C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt\locale.h
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\string
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source\Data\MyActor.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\MyActor.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
+C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source\Data\MutiThread.h

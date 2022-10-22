@@ -81,7 +81,7 @@ bool Socket::SendSocket()
 	return true;
 }
 
-bool Socket::ReciveSocket()
+FString Socket::ReciveSocket()
 {
 	char	Buffer[1024] = { 0, };
 	int RecvBytes = recv(_Socket, Buffer, 1024, 0);
@@ -92,21 +92,28 @@ bool Socket::ReciveSocket()
 	if (RecvBytes <= 0)
 	{
 		UE_LOG(LogTemp, Log, TEXT("Winsock Error : %s"), GetLastError());
-		return false;
 	}
-	return true;
+	return MSG;
 }
 
-void Socket::ReciveStruct(SpawnActorInfo* ActorInfo)
-{
-	int len;
-	recv(_Socket, (char*)&len, sizeof(int), 0);
-
-	char	Buffer[1024] = { 0, };
-	recv(_Socket, Buffer, len, 0);
-
-	ActorInfo = (SpawnActorInfo*)Buffer;
-
-	UE_LOG(LogTemp, Log, TEXT("funtion : %i"), ActorInfo->Key);
-
-}
+//SpawnActorInfo Socket::ReciveStruct(SpawnActorInfo* _ActorInfo)
+//{
+//	int len;
+//	recv(_Socket, (char*)&len, sizeof(int), 0);
+//
+//	char	Buffer[1024] = { 0, };
+//	recv(_Socket, Buffer, len, 0);
+//	
+//	_ActorInfo = (SpawnActorInfo*)Buffer;
+//
+//	return *_ActorInfo;
+//}
+//
+//void Socket::SendStruct(SpawnActorInfo _ActorInfo)
+//{
+//	int SendInt;
+//	int SendIntLength = sizeof(_ActorInfo);
+//	SendInt = send(_Socket, (char*)&SendIntLength, sizeof(int), 0);
+//	SendInt = send(_Socket, (char*)&_ActorInfo, sizeof(SpawnActorInfo), 0);
+//
+//}

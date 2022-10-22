@@ -17,20 +17,35 @@
 /**
  * 
  */
-struct MyFVector
+enum class Header
 {
-	int x;
-	int y;
-	int z;
+	None,
+	ActorInfo,
 };
+
+struct Packing
+{
+
+};
+
 
 struct SpawnActorInfo
 {
 	int Key;
-	FString Name;
-	MyFVector VectorInfo;
+	char Name[10];
+	int x;
+	int y;
+	int z;
 
 	SpawnActorInfo() { Key = 0; };
+	SpawnActorInfo(int _key, const char* _Name, int _x, int _y, int _z)
+	{
+		Key = _key;
+		strcpy_s(Name,_Name);
+		x = _x;
+		y = _y;
+		z = _z;
+	}
 };
 
 class DATA_API Socket
@@ -61,13 +76,43 @@ public:
 	bool SendSocket();
 
 	// 데이터 받음
-	bool ReciveSocket();
+	FString ReciveSocket();
 
-	// 구조체 받기
-	void ReciveStruct(SpawnActorInfo* ActorInfo);
+	//// 구조체 받기
+	//SpawnActorInfo ReciveStruct(SpawnActorInfo* _ActorInfo);
+	//void SendStruct(SpawnActorInfo _ActorInfo);
+
+	template<typename T>
+	T TReciveStruct(T* _Struct);
+
+	template<typename T>
+	void TSendStruct(T _Struct);
 
 	SOCKET _Socket;
 
 	SOCKET _SocketConnected;
 
 };
+
+template<typename T>
+inline T Socket::TReciveStruct(T* _Struct)
+{
+	int len;
+	recv(_Socket, (char*)&len, sizeof(int), 0);
+
+	char	Buffer[1024] = { 0, };
+	recv(_Socket, Buffer, len, 0);
+
+	_Struct = (T*)Buffer;
+
+	return *_Struct;
+}
+
+template<typename T>
+inline void Socket::TSendStruct(T _Struct)
+{
+	int SendInt;
+	int SendIntLength = sizeof(_Struct);
+	SendInt = send(_Socket, (char*)&SendIntLength, sizeof(int), 0);
+	SendInt = send(_Socket, (char*)&_Struct, sizeof(_Struct), 0);
+}
