@@ -11,12 +11,10 @@ void ATenth_TutorialGameModeBase::BeginPlay()
 		exit(-1);
 	}
 
-	SocketCheck = MySock.ConnectSocket();
-	MySock.CommunicateSocket();
 }
 
 void ATenth_TutorialGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	closesocket(MySock.ClientSocket);
+	
 	WSACleanup();
 }

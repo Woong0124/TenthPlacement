@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Tenth_Tutorial.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{CB0847D8-7F36-4D5F-A254-9C181330F455}</UniqueIdentifier>
+      <UniqueIdentifier>{ED60A82B-F1D7-4086-9682-887E5B931C7F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Tenth_Tutorial.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{8F99A342-2947-4563-815F-20E08E9B7F2D}</UniqueIdentifier>
+      <UniqueIdentifier>{C06A99F9-B1F7-41C1-B706-3AB650E4B5C6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,7 +24,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Tenth_Tutorial">
-      <UniqueIdentifier>{A39F67FF-F7C5-46E9-A8A7-790A048D95B3}</UniqueIdentifier>
+      <UniqueIdentifier>{8CA84B1C-9361-4451-9759-945547B17D5D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Tenth_Tutorial\Tenth_Tutorial.Build.cs">
       <Filter>Source\Tenth_Tutorial</Filter>
@@ -35,26 +35,28 @@
     <ClInclude Include="..\..\Source\Tenth_Tutorial\Tenth_Tutorial.h">
       <Filter>Source\Tenth_Tutorial</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tenth_Tutorial\Tenth_TutorialGameModeBase.cpp">
+      <Filter>Source\Tenth_Tutorial</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tenth_Tutorial\Tenth_TutorialGameModeBase.h">
+      <Filter>Source\Tenth_Tutorial</Filter>
+    </ClInclude>
     <Filter Include="Source\Tenth_Tutorial\Private">
-      <UniqueIdentifier>{9F36F55E-D697-4F4B-B320-20E5B57E6999}</UniqueIdentifier>
+      <UniqueIdentifier>{3676CEAC-43A8-4DAC-9621-98E3F5EC63E0}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Tenth_Tutorial\Private\MyActor.cpp">
+      <Filter>Source\Tenth_Tutorial\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Tenth_Tutorial\Private\MySocket.cpp">
       <Filter>Source\Tenth_Tutorial\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Tenth_Tutorial\Public">
-      <UniqueIdentifier>{281475FC-9A85-42AE-BDA7-87BE426EC5F1}</UniqueIdentifier>
+      <UniqueIdentifier>{80D3537C-436F-460F-8238-647B395F415F}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\Tenth_Tutorial\Public\MySocket.h">
+    <ClInclude Include="..\..\Source\Tenth_Tutorial\Public\MyActor.h">
       <Filter>Source\Tenth_Tutorial\Public</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\Tenth_Tutorial\Tenth_TutorialGameModeBase.cpp">
-      <Filter>Source\Tenth_Tutorial\Private</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\Tenth_Tutorial\Tenth_TutorialGameModeBase.h">
+    <ClInclude Include="..\..\Source\Tenth_Tutorial\Public\MySocket.h">
       <Filter>Source\Tenth_Tutorial\Public</Filter>
     </ClInclude>
   </ItemGroup>

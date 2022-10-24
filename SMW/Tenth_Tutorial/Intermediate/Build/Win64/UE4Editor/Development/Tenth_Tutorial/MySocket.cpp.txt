@@ -1,5 +1,5 @@
-C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h
-C:\Tenth_Tutorial\Tenth_Tutorial\Source\Tenth_Tutorial\Public\MySocket.h
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Public\MySocket.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/AllowWindowsPlatformTypes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/WindowsHWrapper.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h

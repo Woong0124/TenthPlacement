@@ -1,0 +1,5 @@
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial/Public/MyActor.h
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Inc\Tenth_Tutorial\MyActor.generated.h

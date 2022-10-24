@@ -32,8 +32,10 @@
 /wd4244
 /wd4838
 /I .
-/I C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Inc\Tenth_Tutorial
-/I C:\Tenth_Tutorial\Tenth_Tutorial\Source
+/I C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Private
+/I C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Inc\Tenth_Tutorial
+/I C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source
+/I C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Public
 /I Runtime
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
@@ -262,12 +264,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Tenth_Tutorial\Tenth_Tutorial\Source\Tenth_Tutorial\Tenth_Tutorial.cpp"
-/FI"C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h"
-/Fo"C:\Tenth_Tutorial\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Tenth_Tutorial.cpp.obj"
+/FI"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Tenth_Tutorial.cpp"
+/FI"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h"
+/Fo"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Tenth_Tutorial.cpp.obj"
 /TP
 /GR-
 /W4

@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Tenth_Tutorial\\Tenth_Tutorial\\Source\\Tenth_Tutorial\\Tenth_Tutorial.Build.cs",
-		"C:\\Tenth_Tutorial\\Tenth_Tutorial\\Source\\Tenth_Tutorial.Target.cs",
-		"C:\\Tenth_Tutorial\\Tenth_Tutorial\\Source\\Tenth_TutorialEditor.Target.cs"
+		"C:\\Tenth_Tutorial\\TenthPlacement\\SMW\\Tenth_Tutorial\\Source\\Tenth_Tutorial\\Tenth_Tutorial.Build.cs",
+		"C:\\Tenth_Tutorial\\TenthPlacement\\SMW\\Tenth_Tutorial\\Source\\Tenth_Tutorial.Target.cs",
+		"C:\\Tenth_Tutorial\\TenthPlacement\\SMW\\Tenth_Tutorial\\Source\\Tenth_TutorialEditor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }

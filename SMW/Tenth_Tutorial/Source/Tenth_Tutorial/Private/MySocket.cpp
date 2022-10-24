@@ -9,11 +9,13 @@
 MySocket::MySocket()
 {
 	_Socket = INVALID_SOCKET;
-	_SocketConnected = INVALID_SOCKET
+	_SocketConnected = INVALID_SOCKET;
 }
 
 MySocket::~MySocket()
 {
+	//소켓을 담아줌
+	UE_LOG(LogTemp, Log, TEXT("Close Socket"));
 	closesocket(_Socket);
 	closesocket(_SocketConnected);
 	WSACleanup();
@@ -29,7 +31,7 @@ bool MySocket::InitSocket()
 		return false;
 	}
 
-	
+	return true;
 	
 }
 

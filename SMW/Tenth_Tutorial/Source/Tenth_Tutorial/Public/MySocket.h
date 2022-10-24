@@ -12,6 +12,25 @@
 #include "Windows/HideWindowsPlatformTypes.h"
 #include "CoreMinimal.h"
 
+#pragma pack(1)
+struct Package
+{
+	int Packsize;
+	int Header;
+	int X;
+	int Y;
+	int Z;
+};
+
+#pragma pack()
+
+enum PackageHeader
+{
+	HSpawn = 0,
+	HActorMove = 1,
+
+	None = 9
+};
 /**
  * 
  */
@@ -66,7 +85,7 @@ inline T MySocket::TReciveStruct(T* _Struct)
 }
 
 template<typename T>
-inline void MySocket::TSendStruct(T_Struct)
+inline void MySocket::TSendStruct(T _Struct)
 {
 	int SendInt;
 	int SendIntLength = sizeof(_Struct);
