@@ -19,6 +19,12 @@ MultiThread::MultiThread()
 	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
 }
 
+MultiThread::MultiThread(ADataGameModeBase* a)
+{
+	MyGameModeBase = a;
+	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
+}
+
 
 MultiThread::~MultiThread()
 {
@@ -51,15 +57,22 @@ uint32 MultiThread::Run()
 	_Sock->InitSocket();
 	_Sock->CreatSocket();
 	_Sock->ConnectSocket(SERVER_IP, PORT);
-	UE_LOG(LogTemp, Warning, TEXT("My custom thread is running!"))
+	UE_LOG(LogTemp, Warning, TEXT("My custom thread is running!"));
+	
 
+	Package ReceivePack;
+
+	int i = 0;
 	while (bRunThread)
 	{
 		
-		FPlatformProcess::Sleep(1.0f);
-		
-		FString MSG = _Sock->ReciveSocket();
-		UE_LOG(LogTemp, Warning, TEXT("Recive MSG : %s"), *MSG);
+		FPlatformProcess::Sleep(0.01f);
+
+		ReceivePack = _Sock->TReceiveStruct<Package>(&ReceivePack);
+
+		UE_LOG(LogTemp, Log, TEXT("Header : %d X : %d Z : %d"), ReceivePack.Header, ReceivePack.X, ReceivePack.Z);
+
+		MyGameModeBase->ReceivePack = ReceivePack;
 	}
 
 	delete _Sock;
