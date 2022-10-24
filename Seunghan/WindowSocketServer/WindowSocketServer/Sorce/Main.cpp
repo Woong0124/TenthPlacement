@@ -9,9 +9,8 @@
 #include "TCP_Socket.h"
 #include "MySQL.h"
 #include <string>
+
 using namespace std;
-
-
 
 #define PORT	4000
 #define PACKED_SIZE 1024
@@ -21,7 +20,7 @@ int main()
 {
 	MySQL* sql = new MySQL;
 	
-	SpawnActorInfo a;
+	Package a;
 
 	sql->ConncetMySQL();
 
@@ -43,8 +42,10 @@ int main()
 
 	while (true)
 	{
-		Socket->SendSocket();
+		Socket->TSendStruct<Package>(a);
+		sql->Insert(a);
 	}
+
 	/*SpawnActorInfo b;
 	b = Socket->ReciveStruct(&b);
 

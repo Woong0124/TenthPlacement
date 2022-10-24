@@ -18,6 +18,7 @@ Socket::Socket()
 Socket::~Socket()
 {
 	// 소켓을 닫아준다.
+	UE_LOG(LogTemp, Log, TEXT("Close Socket"));
 	closesocket(_Socket);
 	closesocket(_SocketConnected);
 
@@ -81,7 +82,7 @@ bool Socket::SendSocket()
 	return true;
 }
 
-FString Socket::ReciveSocket()
+FString Socket::ReceiveSocket()
 {
 	char	Buffer[1024] = { 0, };
 	int RecvBytes = recv(_Socket, Buffer, 1024, 0);
@@ -95,25 +96,3 @@ FString Socket::ReciveSocket()
 	}
 	return MSG;
 }
-
-//SpawnActorInfo Socket::ReciveStruct(SpawnActorInfo* _ActorInfo)
-//{
-//	int len;
-//	recv(_Socket, (char*)&len, sizeof(int), 0);
-//
-//	char	Buffer[1024] = { 0, };
-//	recv(_Socket, Buffer, len, 0);
-//	
-//	_ActorInfo = (SpawnActorInfo*)Buffer;
-//
-//	return *_ActorInfo;
-//}
-//
-//void Socket::SendStruct(SpawnActorInfo _ActorInfo)
-//{
-//	int SendInt;
-//	int SendIntLength = sizeof(_ActorInfo);
-//	SendInt = send(_Socket, (char*)&SendIntLength, sizeof(int), 0);
-//	SendInt = send(_Socket, (char*)&_ActorInfo, sizeof(SpawnActorInfo), 0);
-//
-//}

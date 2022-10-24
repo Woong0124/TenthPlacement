@@ -17,35 +17,24 @@
 /**
  * 
  */
-enum class Header
+#pragma pack(1)
+struct Package
 {
-	None,
-	ActorInfo,
-};
-
-struct Packing
-{
-
-};
-
-
-struct SpawnActorInfo
-{
+	int PackSize;
+	int Header;
 	int Key;
-	char Name[10];
-	int x;
-	int y;
-	int z;
+	int X;
+	int Y;
+	int Z;
+};
+#pragma pack()
 
-	SpawnActorInfo() { Key = 0; };
-	SpawnActorInfo(int _key, const char* _Name, int _x, int _y, int _z)
-	{
-		Key = _key;
-		strcpy_s(Name,_Name);
-		x = _x;
-		y = _y;
-		z = _z;
-	}
+enum PackageHeader
+{
+	HSpawn = 0,
+	HActorMove = 1,
+
+	None = 9
 };
 
 class DATA_API Socket
@@ -76,14 +65,10 @@ public:
 	bool SendSocket();
 
 	// 데이터 받음
-	FString ReciveSocket();
-
-	//// 구조체 받기
-	//SpawnActorInfo ReciveStruct(SpawnActorInfo* _ActorInfo);
-	//void SendStruct(SpawnActorInfo _ActorInfo);
+	FString ReceiveSocket();
 
 	template<typename T>
-	T TReciveStruct(T* _Struct);
+	T TReceiveStruct(T* _Struct);
 
 	template<typename T>
 	void TSendStruct(T _Struct);
@@ -95,7 +80,7 @@ public:
 };
 
 template<typename T>
-inline T Socket::TReciveStruct(T* _Struct)
+inline T Socket::TReceiveStruct(T* _Struct)
 {
 	int len;
 	recv(_Socket, (char*)&len, sizeof(int), 0);

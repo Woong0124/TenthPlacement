@@ -32,7 +32,7 @@ public:
 	// Query 결과 출력
 	void OutResult();
 	// 데이터를 넣기
-	void Insert(SpawnActorInfo& ActorInfo);
+	void Insert(Package& Package);
 
 	void DataTableInsert(const char* value);
 };

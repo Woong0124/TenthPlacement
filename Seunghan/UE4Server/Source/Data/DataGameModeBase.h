@@ -28,9 +28,21 @@ class DATA_API ADataGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 public:
-
+	ADataGameModeBase();
+	~ADataGameModeBase();
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	void SpawnActor(FVector ActorVector);
+
+	void Process();
+	Package ReceivePack;
+	FTimerHandle TimerHandle;
+
 private:
+
+	class AMyActor* MyActor[5];
+	
+	class MultiThread* Worker;
 	Socket _Sock;
 	bool IsConnected;
 };

@@ -12,6 +12,7 @@ class DATA_API MultiThread :public FRunnable
 {
 public:
 	MultiThread();
+	MultiThread(class ADataGameModeBase* a);
 	~MultiThread();
 
 	// Overriden from FRunnable
@@ -26,6 +27,8 @@ private:
 	// Thread handle. Control the thread using this, with operators like Kill and Suspend
 	FRunnableThread* Thread;
 
+
+	class ADataGameModeBase* MyGameModeBase;
 	// Used to know when the thread should exit, changed in Stop(), read in Run()
 	bool bRunThread;
 };
