@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "HAL/Runnable.h"
+#include "MySocket.h"
 
 /**
  * 
@@ -13,8 +15,15 @@ public:
 	MyRunnable();
 	~MyRunnable();
 
-	virtual bool Init() override;
-	virtual uint32 Run() override;
-	virtual void Exit() override;
-	virtual void Stop() override;
+	bool Init() override;
+	uint32 Run() override;
+	void Stop() override;
+
+	MySocket* MySock;
+	DataStruct* MyDataStruct;
+	bool bSocketCheck;
+
+private:
+	FRunnableThread* MyThread;
+	bool bRunThread;
 };

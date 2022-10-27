@@ -39,28 +39,11 @@ class ASocketPracGameModeBase;
 /**
  * 
  */
-class SOCKETPRAC_API MySocket : public FRunnable
+class SOCKETPRAC_API MySocket
 {
 public:
 	MySocket();
 	~MySocket();
-
-
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-	MySocket(ASocketPracGameModeBase* MyGameMode);
-
-	// Thread
-	virtual bool Init() override;
-	virtual uint32 Run() override;
-	virtual void Exit() override;
-	virtual void Stop() override;
-
-	bool CheckThread = false;
-	ASocketPracGameModeBase* MyGM;
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-
 
 	SOCKET ClientSocket;
 	DataStruct* MyDataStruct;
@@ -79,5 +62,29 @@ public:
 
 	// send
 	void SendStructSocket(DataStruct* DStruct);
+
+
+
+
+
+
+
+
+
+
+
+
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+	//// Thread
+	//bool Init() override;
+	//uint32 Run() override;
+	///*virtual void Exit() override;*/
+	//void Stop() override;
+
+	//bool CheckThread;
+	//FRunnableThread* MyThread;
+	//////////////////////////////////////////////////
+	//////////////////////////////////////////////////
 
 };

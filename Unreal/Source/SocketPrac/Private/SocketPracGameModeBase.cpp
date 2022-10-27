@@ -3,42 +3,58 @@
 
 #include "SocketPracGameModeBase.h"
 #include "MyActor01.h"
+#include "MyRunnable.h"
 
-
+//class AMyRunnable;
 
 void ASocketPracGameModeBase::BeginPlay()
 {
-	MySock = new MySocket(this);
+	MyRun = new MyRunnable();
+	MyDataStruct = new DataStruct();
 
-	//SocketCheck = MySock.InitSocket();
-	//if (SocketCheck == false)
-	//{
-	//	exit(-1);
-	//}
+	// 스폰되게 구현해보기
+	GetWorldTimerManager().SetTimer(SocketTimerHandle, this, &ASocketPracGameModeBase::MyProcess, 0.1f, true);
+
+
+
+
+	/*SocketCheck = MySock->InitSocket();
+	SocketCheck = MySock->ConnectSocket();
 	//
-	//SocketCheck = MySock.ConnectSocket();
-
-	//MyDataStruct = new DataStruct;
-
-	//// 서버로부터 받아온 정보를 가지고 액터 스폰
-	//*MyDataStruct = MySock.RecvStructSocket(MyDataStruct);
-	//if (MyDataStruct->AInfo == SpawnActor)
-	//{
-	//	//thread t1{ &ASocketPracGameModeBase::MySpawnActor, MyDataStruct };
-	//	MySpawnActor(MyDataStruct);
-	//}
-	//*MyDataStruct = MySock.RecvStructSocket(MyDataStruct);
-	//if (MyDataStruct->AInfo == SpawnActor)
-	//{
-	//	MySpawnActor(MyDataStruct);
-	//}
+	// 서버로부터 받아온 정보를 가지고 액터 스폰
+	*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}
+	*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}
+	*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}*/
 }
 
 void ASocketPracGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	delete MySock;
-	//closesocket(MySock.ClientSocket);
-	//WSACleanup();
+	delete MyRun;
+}
+
+void ASocketPracGameModeBase::MyProcess()
+{
+	MyDataStruct = MyRun->MyDataStruct;
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}
+	if (MyDataStruct->AInfo == MoveActor)
+	{
+
+	}
 }
 
 void ASocketPracGameModeBase::MySpawnActor(DataStruct* DStruct)

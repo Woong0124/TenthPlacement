@@ -10,7 +10,7 @@
 MySocket::MySocket()
 {
 	ClientSocket = INVALID_SOCKET;
-	MyDataStruct = new DataStruct;
+	MyDataStruct = new DataStruct();
 }
 
 MySocket::~MySocket()
@@ -19,55 +19,6 @@ MySocket::~MySocket()
 	WSACleanup();
 }
 
-////////////////////////////////////////////////
-////////////////////////////////////////////////
-MySocket::MySocket(ASocketPracGameModeBase* MyGameMode)
-{
-	ClientSocket = INVALID_SOCKET;
-	MyDataStruct = new DataStruct;
-	MyGM = MyGameMode;
-}
-
-bool MySocket::Init()
-{
-	CheckThread = InitSocket();
-	if (CheckThread == false)
-	{
-		return false;
-	}
-	CheckThread = ConnectSocket();
-	if (CheckThread == false)
-	{
-		return false;
-	}
-	return true;
-}
-
-uint32 MySocket::Run()
-{
-	*MyDataStruct = RecvStructSocket(MyDataStruct);
-	MyGM->MySpawnActor(MyDataStruct);
-	*MyDataStruct = RecvStructSocket(MyDataStruct);
-	MyGM->MySpawnActor(MyDataStruct);
-	while (true)
-	{
-		char Buffer[1024] = { 0, };
-		int BufferSize = sizeof(Buffer);
-		BufferSize = recv(ClientSocket, Buffer, BufferSize, 0);
-		UE_LOG(LogTemp, Log, TEXT("%s"), &Buffer);
-	}
-	return uint32();
-}
-
-void MySocket::Exit()
-{
-}
-
-void MySocket::Stop()
-{
-}
-////////////////////////////////////////////////
-////////////////////////////////////////////////
 
 bool MySocket::InitSocket()
 {
@@ -144,3 +95,86 @@ void MySocket::SendStructSocket(DataStruct* DStruct)
 
 	SendInt = send(ClientSocket, (char*)DStruct, sizeof(DataStruct), 0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//bool MySocket::Init()
+//{
+//	
+//	UE_LOG(LogTemp, Log, TEXT("Thread Init "));
+//	CheckThread = InitSocket();
+//	if (CheckThread == false)
+//	{
+//		
+//		return false;
+//	}
+//	CheckThread = ConnectSocket();
+//	if (CheckThread == false)
+//	{
+//		return false;
+//	}
+//	return true;
+//}
+//
+//uint32 MySocket::Run()
+//{
+//	if (MyThread != nullptr)
+//	{
+//		auto a = MyThread->GetThreadID();
+//		UE_LOG(LogTemp, Log, TEXT("aaaaaaaaaaaaaaaaaaaa Init %d"), a);
+//	}
+//	//while (true)
+//	//{
+//	//	UE_LOG(LogTemp, Log, TEXT("Thread Run"))
+//	//	//*MyDataStruct = RecvStructSocket(MyDataStruct);
+//	//}
+//	UE_LOG(LogTemp, Log, TEXT("Thread Finish"))
+//
+//
+//
+//	/*for (int i = 0; i < 100; ++i)
+//	{
+//		*MyDataStruct = RecvStructSocket(MyDataStruct);
+//		UE_LOG(LogTemp, Log, TEXT("%i"), MyDataStruct->Key);
+//		*MyDataStruct = RecvStructSocket(MyDataStruct);
+//		UE_LOG(LogTemp, Log, TEXT("%i"), MyDataStruct->Key);
+//		*MyDataStruct = RecvStructSocket(MyDataStruct);
+//		UE_LOG(LogTemp, Log, TEXT("%i"), MyDataStruct->Key);
+//
+//		char Buffer[1024] = { 0, };
+//		int BufferSize = sizeof(Buffer);
+//		BufferSize = recv(ClientSocket, Buffer, BufferSize, 0);
+//		UE_LOG(LogTemp, Log, TEXT("%s"), &Buffer);
+//	}
+//	UE_LOG(LogTemp, Log, TEXT("Thread Finish"));*/
+//	return 0;
+//}
+//
+////void MySocket::Exit()
+////{
+////	if (ClientSocket)
+////	{
+////		closesocket(ClientSocket);
+////		WSACleanup();
+////	}
+////}
+//
+//void MySocket::Stop()
+//{
+//
+//}
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////

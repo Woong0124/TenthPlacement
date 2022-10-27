@@ -24,9 +24,14 @@ public:
 
 	DataStruct* MyDataStruct;
 
+	class MyRunnable* MyRun;
+	FTimerHandle SocketTimerHandle;
+
 	virtual void BeginPlay() override;
 
-	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason);
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
+	void MyProcess();
 
 	void MySpawnActor(DataStruct* DStruct);
 
