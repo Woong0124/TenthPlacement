@@ -58,10 +58,10 @@ int main()
 
 
 
+	DataStruct* DStruct = new DataStruct;
 
 	while (true)
 	{
-		DataStruct* DStruct = new DataStruct;
 		MyDataBase->QueryTransmission("SELECT * FROM DATATABLE");
 
 		DStruct->AInfo = SpawnActor;
@@ -69,23 +69,20 @@ int main()
 		{
 			MyDataBase->QueryStructInsert(DStruct);
 			MySock->SendStructSocket(DStruct);
-			}
-		delete DStruct;
+		}
+
+		DStruct->Key = 9;
+		DStruct->AInfo = MoveActor;
+		DStruct->LocX = 1;
+		DStruct->LocY = 0;
+		DStruct->LocZ = 0;
+
+		MySock->SendStructSocket(DStruct);
 	}
 
+	delete DStruct;
 
 
-	// 테스트 중
-	/*while (true)
-	{
-		char Buffer[1024] = "1";
-		int BufferSize = sizeof(Buffer);
-		send(MySock->ClientSocket, (char*)Buffer, BufferSize, 0);
-	}*/
-
-
-
-	//delete DStruct;
 
 	// 소켓 해제
 	delete MySock;

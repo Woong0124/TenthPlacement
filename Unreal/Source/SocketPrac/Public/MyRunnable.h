@@ -14,6 +14,7 @@ class SOCKETPRAC_API MyRunnable : public FRunnable
 public:
 	MyRunnable();
 	~MyRunnable();
+	MyRunnable(ASocketPracGameModeBase* SocketPracGM);
 
 	bool Init() override;
 	uint32 Run() override;
@@ -22,6 +23,7 @@ public:
 	MySocket* MySock;
 	DataStruct* MyDataStruct;
 	bool bSocketCheck;
+	ASocketPracGameModeBase* MyGM;
 
 private:
 	FRunnableThread* MyThread;

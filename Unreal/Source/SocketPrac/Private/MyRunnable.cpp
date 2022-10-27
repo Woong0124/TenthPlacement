@@ -2,6 +2,7 @@
 
 
 #include "MyRunnable.h"
+#include "SocketPracGameModeBase.h"
 
 #pragma region Main Thread Code
 
@@ -19,6 +20,12 @@ MyRunnable::~MyRunnable()
 	}
 }
 
+MyRunnable::MyRunnable(ASocketPracGameModeBase* SocketPracGM)
+{
+	MyGM = SocketPracGM;
+	MyThread = FRunnableThread::Create(this, TEXT("Newtwork Thread"));
+}
+
 #pragma endregion
 
 bool MyRunnable::Init()
@@ -30,6 +37,7 @@ bool MyRunnable::Init()
 uint32 MyRunnable::Run()
 {
 	MySock = new MySocket();
+	MyDataStruct = new DataStruct();
 	bSocketCheck = MySock->InitSocket();
 	bSocketCheck = MySock->ConnectSocket();
 
@@ -38,13 +46,11 @@ uint32 MyRunnable::Run()
 		bRunThread = true;
 		while (bRunThread)
 		{
-			MyDataStruct = new DataStruct();
 			*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
-
-			UE_LOG(LogTemp, Warning, TEXT("Thread Run"))
-				FPlatformProcess::Sleep(0.1f);
 		}
 	}
+	delete MyDataStruct;
+	delete MySock;
 	return 0;
 }
 

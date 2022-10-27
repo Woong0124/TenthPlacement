@@ -19,7 +19,7 @@ enum ActiveInfo
 
 struct DataStruct
 {
-	int Key;
+	unsigned int Key;
 	ActiveInfo AInfo;
 	char ActorType[50];
 	float LocX;

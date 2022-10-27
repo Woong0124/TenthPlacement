@@ -26,4 +26,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	unsigned int MyKey;
+
 };

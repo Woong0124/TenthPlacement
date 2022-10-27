@@ -9,10 +9,11 @@
 
 void ASocketPracGameModeBase::BeginPlay()
 {
-	MyRun = new MyRunnable();
+
+	MyRun = new MyRunnable(this);
 	MyDataStruct = new DataStruct();
 
-	// 스폰되게 구현해보기
+
 	GetWorldTimerManager().SetTimer(SocketTimerHandle, this, &ASocketPracGameModeBase::MyProcess, 0.1f, true);
 
 
@@ -44,29 +45,63 @@ void ASocketPracGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	delete MyRun;
 }
 
+void ASocketPracGameModeBase::Tick(float DeltaSeconds)
+{
+	//MyProcess();
+}
+
 void ASocketPracGameModeBase::MyProcess()
 {
 	MyDataStruct = MyRun->MyDataStruct;
-	if (MyDataStruct->AInfo == SpawnActor)
+	if (MyDataStruct->Key != NULL)
 	{
-		MySpawnActor(MyDataStruct);
-	}
-	if (MyDataStruct->AInfo == MoveActor)
-	{
-
+		if (MyDataStruct->AInfo == SpawnActor)
+		{
+			MySpawnActor(MyDataStruct);
+		}
+		if (MyDataStruct->AInfo == MoveActor)
+		{
+			MyMoveActor(MyDataStruct);
+		}
 	}
 }
 
 void ASocketPracGameModeBase::MySpawnActor(DataStruct* DStruct)
 {
-	if (strcmp(DStruct->ActorType, "AMyActor01") == 0)
+	DataStruct MyData = *DStruct;
+	static unsigned int MyActorCount = 0;
+	bool DoubleCheck = false;
+
+	if (MyData.Key != NULL)
 	{
-		FActorSpawnParameters SpawnParam;
-		GetWorld()->SpawnActor<AMyActor01>(AMyActor01::StaticClass(), FVector(DStruct->LocX, DStruct->LocY, DStruct->LocZ), FRotator(0.f, 0.f, 0.f), SpawnParam);
+		// 중복되는 녀석인지 아닌지 확인
+		for (unsigned int i = 0; i < MyActorCount; ++i)
+		{
+			if (MyActorArr[i]->MyKey == MyData.Key)
+			{
+				DoubleCheck = true;
+			}
+		}
+
+		if (strcmp(MyData.ActorType, "AMyActor01") == 0 && DoubleCheck == false)
+		{
+			FActorSpawnParameters SpawnParam;
+			MyActorArr[MyActorCount] = GetWorld()->SpawnActor<AMyActor01>(AMyActor01::StaticClass(), FVector(MyData.LocX, MyData.LocY, MyData.LocZ), FRotator(0.f, 0.f, 0.f), SpawnParam);
+			MyActorArr[MyActorCount]->MyKey = MyData.Key;
+		}
+
+		if (MyActorArr[MyActorCount] != NULL)
+		{
+			++MyActorCount;
+		}
 	}
 }
 
 void ASocketPracGameModeBase::MyMoveActor(DataStruct* DStruct)
 {
-	
+	DataStruct MyData = *DStruct;
+	if (MyActorArr[0] != NULL)
+	{
+		MyActorArr[0]->AddActorWorldOffset(FVector(MyData.LocX, MyData.LocY, MyData.LocZ));
+	}
 }
