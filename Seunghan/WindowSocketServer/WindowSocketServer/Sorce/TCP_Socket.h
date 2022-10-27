@@ -38,12 +38,6 @@ public:
 
 	// 데이터 받음
 	bool ReciveSocket();
-	
-	// 구조체 전송
-	void SendStruct(SpawnActorInfo ActorInfo);
-
-	// 구조체 받기
-	SpawnActorInfo ReciveStruct(SpawnActorInfo* ActorInfo);
 
 	// 구조체 변경
 	template<typename T>

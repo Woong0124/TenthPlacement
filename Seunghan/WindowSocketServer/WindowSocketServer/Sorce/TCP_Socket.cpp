@@ -8,8 +8,10 @@
 #include <iostream>
 
 
+
 TCP_Socket::TCP_Socket()
 {
+	memset(this, 0, sizeof(TCP_Socket));
 	_Socket = INVALID_SOCKET;
 	_SocketConnected = INVALID_SOCKET;
 }
@@ -214,27 +216,3 @@ bool TCP_Socket::ReciveSocket()
 	}
 	return true;
 }
-
-void TCP_Socket::SendStruct(SpawnActorInfo ActorInfo)
-{
-	int SendInt;
-	int SendIntLength = sizeof(ActorInfo);
-	SendInt = send(_SocketConnected, (char*)&SendIntLength, sizeof(int), 0);
-
-	SendInt = send(_SocketConnected, (char*)&ActorInfo, sizeof(SpawnActorInfo), 0);
-
-}
-
-SpawnActorInfo TCP_Socket::ReciveStruct(SpawnActorInfo* ActorInfo)
-{
-	int		len = 0;
-	recv(_SocketConnected, (char*)&len, sizeof(int), 0);
-
-	char	Buffer[1024] = { 0, };
-	recv(_SocketConnected, Buffer, len, 0);
-
-	ActorInfo = (SpawnActorInfo*)Buffer;
-
-	return *ActorInfo;
-}
-
