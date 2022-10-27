@@ -5,6 +5,7 @@
 
 MySocket::MySocket()
 { 
+	memset(this, 0, sizeof(MySocket));
 	ServerSocket = INVALID_SOCKET;
 	ClientSocket = INVALID_SOCKET;
 }
@@ -144,26 +145,5 @@ bool MySocket::RecvSocket()
 	return true;
 }
 
-void MySocket::SendStruct(SpawnActorInfo Actorinfo)
-{
-	int SendInt;
-	int SendIntLength = sizeof(Actorinfo);
-	SendInt = send(ClientSocket, (char*)&SendIntLength, sizeof(int), 0);
 
-	SendInt = send(ClientSocket, (char*)&Actorinfo, sizeof(SpawnActorInfo), 0);
-
-}
-
-SpawnActorInfo MySocket::ReciveStruct(SpawnActorInfo* ActorInfo)
-{
-	int len = 0;
-	recv(ClientSocket, (char*)&len, sizeof(int), 0);
-
-	char Buffer[1024] = { 0, };
-	recv(ClientSocket, Buffer, len, 0);
-
-	ActorInfo = (SpawnActorInfo*)Buffer;
-
-	return SpawnActorInfo();
-}
 

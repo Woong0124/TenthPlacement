@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeTenth_Tutorial_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x0C703B1E,
+				0x3C3C2737,
 				0x5FBE6431,
 				METADATA_PARAMS(nullptr, 0)
 			};

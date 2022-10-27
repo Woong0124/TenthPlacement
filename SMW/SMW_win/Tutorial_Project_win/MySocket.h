@@ -42,11 +42,9 @@ public:
 	// Recv
 	bool RecvSocket();
 
-	//구조체 전송
-	void SendStruct(SpawnActorInfo Actorinfo);
+	
 
-	// 구조체 받기
-	SpawnActorInfo ReciveStruct(SpawnActorInfo* ActorInfo);
+
 
 	template<typename T> //템플릿은 헤더에 정의. cpp에 하면 못찾음. 
 	void TSendStruct(T Struct);
@@ -68,9 +66,10 @@ inline void MySocket::TSendStruct(T Struct)
 template<typename T>
 inline T MySocket::TReciveStruct(T* Struct)
 {
+	char Buffer[1024] = { 0, };
 	int len;
 	recv(CToSSocket, (char*)&len, sizeof(int), 0);
-	char Buffer[1024] = { 0, };
+	
 	recv(CToSSocket, Buffer, len, 0);
 	Struct = (T*)Buffer;
 

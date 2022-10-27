@@ -22,9 +22,7 @@ int main()
 
 	MySQL* sql = new MySQL;
 
-	SpawnActorInfo a;
-
-	SpawnActorInfo b;
+	Package a;
 
 	sql->ConncetMySQL();
 	
@@ -33,11 +31,11 @@ int main()
 
 	sql->Insert(a);
 
-	cout << a.ID << endl;
-	cout << a.ActorType << endl;
-	cout << a.x << endl;
-	cout << a.y << endl;
-	cout << a.z << endl;
+	cout << a.Key << endl;
+	cout << a.Header << endl;
+	cout << a.X << endl;
+	cout << a.Y << endl;
+	cout << a.Z << endl;
 
 
 	MySocket* Socket = new MySocket;
@@ -53,21 +51,13 @@ int main()
 
 	Socket->AcceptSocket();
 
-	Socket->TSendStruct<SpawnActorInfo>(a);
+	while (true)
+	{
+		Socket->TSendStruct<Package>(a);
+		sql->Insert(a);
+	}
 
-	b = Socket->ReciveStruct(&b);
-
-	char MSG[100] = {};
-	sprintf_s(MSG, "VALUES (%i, \"%s\",%i, %i, %i)", b.ID, b.ActorType, b.x, b.y, b.z);
-
-	sql->DataTableInsert(MSG);
-
-	sql->Insert(a);
-
-	Socket->TSendStruct<SpawnActorInfo>(a);
-
-	Socket->RecvSocket();
-
+	
 
 	mysql_free_result(sql->mysqlResult);
 

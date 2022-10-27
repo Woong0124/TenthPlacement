@@ -47,11 +47,11 @@ public:
 
 	bool CreateSocket();
 
-	bool BindSocket(const char* _BindIP, int _BindPort);
+	//bool BindSocket(const char* _BindIP, int _BindPort);
 
-	bool ListenSocket();
+	//bool ListenSocket();
 
-	bool AcceptSocket();
+	//bool AcceptSocket();
 
 	bool ConnectSocket(const char* _ServerIP, int _ConnectPort);
 

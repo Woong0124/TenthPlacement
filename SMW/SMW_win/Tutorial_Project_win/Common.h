@@ -1,16 +1,23 @@
 #pragma once
 #include <string>
 
+#pragma pack(1)
 
-
-struct SpawnActorInfo
+struct Package
 {
-	int ID;
-	char ActorType[10];
-	int x;
-	int y;
-	int z;
+	int PackSize;
+	int Header;
+	int Key;
+	int X;
+	int Y;
+	int Z;
 
-	SpawnActorInfo() { memset(this, 0, sizeof(SpawnActorInfo)); };
 };
+#pragma pack()
 
+enum PackageHeader
+{
+	Spawn = 0,
+	Move = 1,
+	None = 9
+};

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Tenth_Tutorial/Tenth_TutorialGameModeBase.h"
+#include "Tenth_Tutorial/Public/Tenth_TutorialGameModeBase.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -43,7 +43,7 @@ void EmptyLinkFunctionForGeneratedCodeTenth_TutorialGameModeBase() {}
 		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Tenth_TutorialGameModeBase.h" },
-		{ "ModuleRelativePath", "Tenth_TutorialGameModeBase.h" },
+		{ "ModuleRelativePath", "Public/Tenth_TutorialGameModeBase.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
@@ -74,7 +74,7 @@ void EmptyLinkFunctionForGeneratedCodeTenth_TutorialGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATenth_TutorialGameModeBase, 2967840888);
+	IMPLEMENT_CLASS(ATenth_TutorialGameModeBase, 1376190922);
 	template<> TENTH_TUTORIAL_API UClass* StaticClass<ATenth_TutorialGameModeBase>()
 	{
 		return ATenth_TutorialGameModeBase::StaticClass();

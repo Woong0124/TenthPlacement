@@ -2,14 +2,14 @@
 #pragma comment (lib, "libmysql.lib")
 #include <iostream>
 #include <mysql.h>
-
+#include "Common.h"
 
 
 using namespace std;
 
 MySQL::MySQL()
 {
-	memset(this, 0, sizeof(MySQL)); //(객체, 값, 사이즈(어디까지 초기화 할 것인지)
+	//memset(this, 0, sizeof(MySQL)); //(객체, 값, 사이즈(어디까지 초기화 할 것인지)
 	mysql_init(&conn);				// MySQL 정보 초기화
 }
 
@@ -46,7 +46,7 @@ bool MySQL::RecQueryResult()
 
 	// 요청 결과 저장
 	mysqlResult = mysql_store_result(ConnPtr);
-
+	Row = mysql_fetch_row(mysqlResult);
 	return true;
 }
 
@@ -56,44 +56,65 @@ void MySQL::OutResult()
 	// 요청 결과 출력
 	while ((Row = mysql_fetch_row(mysqlResult)) != NULL)
 	{
-		for (int i = 0; i < mysql_num_fields(mysqlResult); ++i)
+		for (unsigned int i = 0; i < mysql_num_fields(mysqlResult); ++i)
 		{
 			cout << Row[i] << "  ";
 		}
 		cout << endl;
 	}
+	Row = mysql_fetch_row(mysqlResult);
 }
-void MySQL::Insert(SpawnActorInfo& ActorInfo)
+
+void MySQL::Insert(Package& Package)
 {
 	
-	Row = mysql_fetch_row(mysqlResult);
-
-	for (unsigned int i = 0; i < mysql_num_fields(mysqlResult); ++i)
-	{
+	char Temp[10] = {};
+	if (Row !=nullptr)
+	{ 
+	
+		for (unsigned int i = 0; i < mysql_num_fields(mysqlResult); ++i)
+	
+		{
+		Package.PackSize = sizeof(Package);
 		switch (i)
 		{
 		case 0:
-			ActorInfo.ID = stoi(Row[i]);
+			Package.Key = stoi(Row[i]);
 			break;
 		case 1:
-			strcpy_s(ActorInfo.ActorType, Row[i]);
+			strcpy_s(Temp, Row[i]);
+			cout << "Temp : " << Temp << endl;
+			if (strcmp(Temp, "Spawn") == 0)
+			{
+				cout << "Spawn Success" << endl;
+				Package.Header = PackageHeader::Spawn;
+			}
+			else if (strcmp(Temp, "Move") == 0)
+			{
+				cout << "Move Success" << endl;
+				Package.Header = PackageHeader::Move;
+			}
+			else
+			{
+				Package.Header = PackageHeader::None;
+			}
 			break;
 		case 2:
-			ActorInfo.x = stoi(Row[i]);
+			Package.X = stoi(Row[i]);
 			break;
 		case 3:
-			ActorInfo.y = stoi(Row[i]);
+			Package.Y = stoi(Row[i]);
 			break;
 		case 4:
-			ActorInfo.z = stoi(Row[i]);
+			Package.Z = stoi(Row[i]);
 			break;
 
 		}
 
-
+		Row = mysql_fetch_row(mysqlResult);
 	}
 }
-
+}
 void MySQL::DataTableInsert(const char* value)
 {
 	char InsertQuery[100] = "insert into tosocketdb ";
