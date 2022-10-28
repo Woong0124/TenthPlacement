@@ -11,7 +11,7 @@ class TENTH_TUTORIAL_API MultiThread : public FRunnable
 {
 public:
 	MultiThread();
-	MultiThread(class ATenth_TutlrialGameModeBase* a);
+	MultiThread(class ATenth_TutorialGameModeBase* a);
 	~MultiThread();
 
 	bool Init() override;
@@ -21,6 +21,6 @@ public:
 private:
 	FRunnableThread* Thread;
 
-	class ATenth_TutlrialGameModeBase* MyGameModeBase;
+	class ATenth_TutorialGameModeBase* MyGameModeBase;
 	bool bRunThread;
 };

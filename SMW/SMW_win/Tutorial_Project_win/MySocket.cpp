@@ -1,7 +1,7 @@
 #include "MySocket.h"
 #include <iostream>
 
-#define PORT 3307
+
 
 MySocket::MySocket()
 { 
@@ -48,7 +48,7 @@ bool MySocket::BindSocket(const char* _BindIP, int _BindPort)
 	memset(&ServerSockAddr, 0, sizeof(SOCKADDR_IN));
 	ServerSockAddr.sin_family = PF_INET;
 	ServerSockAddr.sin_addr.s_addr = htonl(INADDR_ANY); //host to network long( 4byte)
-	ServerSockAddr.sin_port = htons(PORT); //host to network short(2 byte). 이 함수를 거치면 무조건 빅엔디안 방식으로 데이터를 변환하여 설정.
+	ServerSockAddr.sin_port = htons(_BindPort); //host to network short(2 byte). 이 함수를 거치면 무조건 빅엔디안 방식으로 데이터를 변환하여 설정.
 
 	// Socket 바인드
 	int BindServerSock = bind(ServerSocket, (SOCKADDR*)&ServerSockAddr, sizeof(SOCKADDR_IN));
@@ -126,6 +126,8 @@ bool MySocket::SendSocket()
 	if (SendBuffer == SOCKET_ERROR)
 	{
 		std::cout << "Send Error" << GetLastError() << std::endl;
+		exit(-1);
+		return false;
 	}
 	return true;
 }
@@ -140,6 +142,7 @@ bool MySocket::RecvSocket()
 	{
 		std::cout << " fail send : " << GetLastError() << std::endl; 
 		exit(-1);
+		return false;
 		
 	}
 	return true;

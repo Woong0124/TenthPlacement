@@ -16,7 +16,7 @@ MultiThread::MultiThread()
     Thread = FRunnableThread::Create(this, TEXT("SocketSeerver"));
 }
 
-MultiThread::MultiThread(ATenth_TutlrialGameModeBase* a)
+MultiThread::MultiThread(ATenth_TutorialGameModeBase* a)
 {
     MyGameModeBase = a;
     Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
@@ -61,8 +61,11 @@ uint32 MultiThread::Run()
 
         MyGameModeBase->ReceivePack = ReceivePack;
     }
+    delete _Sock;
+    return 0;
 }
 
 void MultiThread::Stop()
 {
+    bRunThread = false;
 }

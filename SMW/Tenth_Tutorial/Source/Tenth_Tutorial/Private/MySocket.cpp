@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
+#define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
 
 #include "MySocket.h"
-
+#pragma comment(lib, "ws2_32.lib")
 #define CP "127.0.0.1"
 #define PORT 3307
 

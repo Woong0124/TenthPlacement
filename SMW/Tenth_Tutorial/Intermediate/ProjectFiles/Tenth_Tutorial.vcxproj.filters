@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Tenth_Tutorial.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{E498B319-142B-4508-9F39-4FAFEF0DEF67}</UniqueIdentifier>
+      <UniqueIdentifier>{FA1E2240-ECEE-4E5D-9114-6F40C994CAAF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Tenth_Tutorial.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{8C29ED9B-5A12-4CA8-A42D-2B1DDEC5E8CF}</UniqueIdentifier>
+      <UniqueIdentifier>{BEAA4C56-8367-445F-AB55-C59779269B55}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,7 +24,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Tenth_Tutorial">
-      <UniqueIdentifier>{A23014BB-2BAD-4E48-86CB-E67A6E1E7067}</UniqueIdentifier>
+      <UniqueIdentifier>{3F9BFFEB-F76F-4326-BD5D-5F33E66B01B2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Tenth_Tutorial\Tenth_Tutorial.Build.cs">
       <Filter>Source\Tenth_Tutorial</Filter>
@@ -36,7 +36,7 @@
       <Filter>Source\Tenth_Tutorial</Filter>
     </ClInclude>
     <Filter Include="Source\Tenth_Tutorial\Private">
-      <UniqueIdentifier>{9D523450-B5B7-43C8-8A81-26DCDAF231EC}</UniqueIdentifier>
+      <UniqueIdentifier>{271D69AE-FF30-45CD-9882-F42C829F82AC}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Tenth_Tutorial\Private\MultiThread.cpp">
       <Filter>Source\Tenth_Tutorial\Private</Filter>
@@ -51,7 +51,7 @@
       <Filter>Source\Tenth_Tutorial\Private</Filter>
     </ClCompile>
     <Filter Include="Source\Tenth_Tutorial\Public">
-      <UniqueIdentifier>{74FD2FBC-87BA-4D88-B999-B55C1FDE0E4A}</UniqueIdentifier>
+      <UniqueIdentifier>{D00F30ED-7C71-4E19-874C-5AD69C35241B}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\Tenth_Tutorial\Public\MultiThread.h">
       <Filter>Source\Tenth_Tutorial\Public</Filter>
@@ -65,8 +65,5 @@
     <ClInclude Include="..\..\Source\Tenth_Tutorial\Public\Tenth_TutorialGameModeBase.h">
       <Filter>Source\Tenth_Tutorial\Public</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\SOURCE\TENTH_TUTORIAL\TENTH_TUTORIALGAMEMODEBASE.CPP" />
   </ItemGroup>
 </Project>

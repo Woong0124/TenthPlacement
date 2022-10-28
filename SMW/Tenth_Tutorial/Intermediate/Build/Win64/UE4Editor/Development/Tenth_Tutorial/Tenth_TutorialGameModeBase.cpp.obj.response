@@ -267,7 +267,7 @@
 /FI"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Yu"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Fp"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\Tenth_TutorialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\TENTH_TUTORIALGAMEMODEBASE.CPP"
+"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Private\Tenth_TutorialGameModeBase.cpp"
 /FI"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Definitions.Tenth_Tutorial.h"
 /Fo"C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Development\Tenth_Tutorial\Tenth_TutorialGameModeBase.cpp.obj"
 /TP

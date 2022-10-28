@@ -31,11 +31,7 @@ int main()
 
 	sql->Insert(a);
 
-	cout << a.Key << endl;
-	cout << a.Header << endl;
-	cout << a.X << endl;
-	cout << a.Y << endl;
-	cout << a.Z << endl;
+	
 
 
 	MySocket* Socket = new MySocket;

@@ -73,7 +73,7 @@ public:
 template<typename T>
 inline T MySocket::TReciveStruct(T* _Struct)
 {
-	int len;
+	int len = 0;
 	recv(_Socket, (char*)len, sizeof(int), 0);
 
 	char Buffer[1024] = { 0, };

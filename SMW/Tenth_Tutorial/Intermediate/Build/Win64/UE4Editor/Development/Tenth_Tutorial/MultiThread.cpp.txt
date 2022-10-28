@@ -111,3 +111,9 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/Po
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/HideWindowsPlatformTypes.h
 C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Public\MyActor.h
 C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Inc\Tenth_Tutorial\MyActor.generated.h
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Source\Tenth_Tutorial\Public\Tenth_TutorialGameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Tenth_Tutorial\TenthPlacement\SMW\Tenth_Tutorial\Intermediate\Build\Win64\UE4Editor\Inc\Tenth_Tutorial\Tenth_TutorialGameModeBase.generated.h

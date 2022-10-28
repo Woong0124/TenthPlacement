@@ -9,7 +9,7 @@ using namespace std;
 
 MySQL::MySQL()
 {
-	//memset(this, 0, sizeof(MySQL)); //(객체, 값, 사이즈(어디까지 초기화 할 것인지)
+	memset(this, 0, sizeof(MySQL)); //(객체, 값, 사이즈(어디까지 초기화 할 것인지)
 	mysql_init(&conn);				// MySQL 정보 초기화
 }
 
@@ -111,9 +111,10 @@ void MySQL::Insert(Package& Package)
 
 		}
 
-		Row = mysql_fetch_row(mysqlResult);
+		}
+
 	}
-}
+	Row = mysql_fetch_row(mysqlResult);
 }
 void MySQL::DataTableInsert(const char* value)
 {
