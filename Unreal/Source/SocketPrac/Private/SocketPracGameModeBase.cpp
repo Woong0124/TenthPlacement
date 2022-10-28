@@ -3,54 +3,105 @@
 
 #include "SocketPracGameModeBase.h"
 #include "MyActor01.h"
+#include "MyRunnable.h"
 
-
+//class AMyRunnable;
 
 void ASocketPracGameModeBase::BeginPlay()
 {
-	MySock = new MySocket(this);
 
-	//SocketCheck = MySock.InitSocket();
-	//if (SocketCheck == false)
-	//{
-	//	exit(-1);
-	//}
+	MyRun = new MyRunnable(this);
+	MyDataStruct = new DataStruct();
+
+
+	GetWorldTimerManager().SetTimer(SocketTimerHandle, this, &ASocketPracGameModeBase::MyProcess, 0.1f, true);
+
+
+
+
+	/*SocketCheck = MySock->InitSocket();
+	SocketCheck = MySock->ConnectSocket();
 	//
-	//SocketCheck = MySock.ConnectSocket();
-
-	//MyDataStruct = new DataStruct;
-
-	//// 서버로부터 받아온 정보를 가지고 액터 스폰
-	//*MyDataStruct = MySock.RecvStructSocket(MyDataStruct);
-	//if (MyDataStruct->AInfo == SpawnActor)
-	//{
-	//	//thread t1{ &ASocketPracGameModeBase::MySpawnActor, MyDataStruct };
-	//	MySpawnActor(MyDataStruct);
-	//}
-	//*MyDataStruct = MySock.RecvStructSocket(MyDataStruct);
-	//if (MyDataStruct->AInfo == SpawnActor)
-	//{
-	//	MySpawnActor(MyDataStruct);
-	//}
+	// 서버로부터 받아온 정보를 가지고 액터 스폰
+	*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}
+	*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}
+	*MyDataStruct = MySock->RecvStructSocket(MyDataStruct);
+	if (MyDataStruct->AInfo == SpawnActor)
+	{
+		MySpawnActor(MyDataStruct);
+	}*/
 }
 
 void ASocketPracGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	delete MySock;
-	//closesocket(MySock.ClientSocket);
-	//WSACleanup();
+	delete MyRun;
+}
+
+void ASocketPracGameModeBase::Tick(float DeltaSeconds)
+{
+	//MyProcess();
+}
+
+void ASocketPracGameModeBase::MyProcess()
+{
+	MyDataStruct = MyRun->MyDataStruct;
+	if (MyDataStruct->Key != NULL)
+	{
+		if (MyDataStruct->AInfo == SpawnActor)
+		{
+			MySpawnActor(MyDataStruct);
+		}
+		if (MyDataStruct->AInfo == MoveActor)
+		{
+			MyMoveActor(MyDataStruct);
+		}
+	}
 }
 
 void ASocketPracGameModeBase::MySpawnActor(DataStruct* DStruct)
 {
-	if (strcmp(DStruct->ActorType, "AMyActor01") == 0)
+	DataStruct MyData = *DStruct;
+	static unsigned int MyActorCount = 0;
+	bool DoubleCheck = false;
+
+	if (MyData.Key != NULL)
 	{
-		FActorSpawnParameters SpawnParam;
-		GetWorld()->SpawnActor<AMyActor01>(AMyActor01::StaticClass(), FVector(DStruct->LocX, DStruct->LocY, DStruct->LocZ), FRotator(0.f, 0.f, 0.f), SpawnParam);
+		// 중복되는 녀석인지 아닌지 확인
+		for (unsigned int i = 0; i < MyActorCount; ++i)
+		{
+			if (MyActorArr[i]->MyKey == MyData.Key)
+			{
+				DoubleCheck = true;
+			}
+		}
+
+		if (strcmp(MyData.ActorType, "AMyActor01") == 0 && DoubleCheck == false)
+		{
+			FActorSpawnParameters SpawnParam;
+			MyActorArr[MyActorCount] = GetWorld()->SpawnActor<AMyActor01>(AMyActor01::StaticClass(), FVector(MyData.LocX, MyData.LocY, MyData.LocZ), FRotator(0.f, 0.f, 0.f), SpawnParam);
+			MyActorArr[MyActorCount]->MyKey = MyData.Key;
+		}
+
+		if (MyActorArr[MyActorCount] != NULL)
+		{
+			++MyActorCount;
+		}
 	}
 }
 
 void ASocketPracGameModeBase::MyMoveActor(DataStruct* DStruct)
 {
-	
+	DataStruct MyData = *DStruct;
+	if (MyActorArr[0] != NULL)
+	{
+		MyActorArr[0]->AddActorWorldOffset(FVector(MyData.LocX, MyData.LocY, MyData.LocZ));
+	}
 }

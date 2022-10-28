@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "HAL/Runnable.h"
+#include "MySocket.h"
 
 /**
  * 
@@ -12,9 +14,18 @@ class SOCKETPRAC_API MyRunnable : public FRunnable
 public:
 	MyRunnable();
 	~MyRunnable();
+	MyRunnable(ASocketPracGameModeBase* SocketPracGM);
 
-	virtual bool Init() override;
-	virtual uint32 Run() override;
-	virtual void Exit() override;
-	virtual void Stop() override;
+	bool Init() override;
+	uint32 Run() override;
+	void Stop() override;
+
+	MySocket* MySock;
+	DataStruct* MyDataStruct;
+	bool bSocketCheck;
+	ASocketPracGameModeBase* MyGM;
+
+private:
+	FRunnableThread* MyThread;
+	bool bRunThread;
 };
