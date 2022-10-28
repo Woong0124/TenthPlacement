@@ -23,7 +23,7 @@ public:
 	void Stop() override; // Clean up any memory you allocated here
 	
 private:
-
+	
 	// Thread handle. Control the thread using this, with operators like Kill and Suspend
 	FRunnableThread* Thread;
 

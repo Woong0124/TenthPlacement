@@ -183,10 +183,10 @@ bool TCP_Socket::ConnectSocket(const char* _ServerIP, int _ConnectPort)
 
 bool TCP_Socket::SendSocket()
 {
-	char	Buffer[] = "1";
+	char	Buffer[] = "Bring Me The Thanos";
 
 	int SendBytes = send(_SocketConnected, Buffer, sizeof(Buffer), 0);
-
+	
 	if (SendBytes <= 0)
 	{
 		std::cout << " fail recv : " << GetLastError() << std::endl; // 마지막 에러 문제 확인
