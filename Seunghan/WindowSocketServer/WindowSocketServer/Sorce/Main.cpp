@@ -40,11 +40,14 @@ int main()
 
 	Socket->AcceptSocket();
 
-	while (true)
+	Socket->ReciveSocket();
+
+	Socket->SendSocket();
+	/*while (true)
 	{
 		Socket->TSendStruct<Package>(a);
 		sql->Insert(a);
-	}
+	}*/
 
 	/*SpawnActorInfo b;
 	b = Socket->ReciveStruct(&b);

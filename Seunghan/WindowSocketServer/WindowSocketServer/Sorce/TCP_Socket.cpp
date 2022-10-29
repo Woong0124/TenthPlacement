@@ -62,7 +62,8 @@ bool TCP_Socket::CreatSocket()
 	// PF_INET은 IPV4 타입을 만들것이고, SOCK_STREAM은 빨대를 만들어 연결 지향적 소켓을 만들겠다는 의미이다.
 	// 마지막 인자는 protocol 즉 통신 규약이 들어간다. TCP를 사용함으로 IPPROTOCOL_TCP를 사용한다고 지정한다.
 
-	_Socket = socket(PF_INET, SOCK_STREAM, 0);
+	_Socket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+
 	if (_Socket == INVALID_SOCKET) // 직역하면 유효하지 않은 소켓.
 	{
 		std::cout << " fail create Socket : " << GetLastError() << std::endl; // 마지막 에러 문제 확인
@@ -155,31 +156,7 @@ bool TCP_Socket::AcceptSocket()
 	return true;
 }
 
-bool TCP_Socket::ConnectSocket(const char* _ServerIP, int _ConnectPort)
-{
-	_ServerSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if (_Socket == INVALID_SOCKET)
-	{
-		std::cout << " fail create Socket : " << GetLastError() << std::endl; // 마지막 에러 문제 확인
-		exit(-1);
-		return false;
-	}
 
-	SOCKADDR_IN ClinetSocketAddr;
-	memset(&ClinetSocketAddr, 0, sizeof(SOCKADDR_IN));
-	ClinetSocketAddr.sin_family = AF_INET;
-	ClinetSocketAddr.sin_port = htons(_ConnectPort);
-	ClinetSocketAddr.sin_addr.s_addr = inet_addr(_ServerIP);
-
-	int Result = connect(_ServerSocket, (SOCKADDR*)&ClinetSocketAddr, sizeof(SOCKADDR_IN));
-
-	if (Result == SOCKET_ERROR)
-	{
-		std::cout << " fail connect : " << GetLastError() << std::endl; // 마지막 에러 문제 확인
-		exit(-1);
-	}
-	return true;
-}
 
 bool TCP_Socket::SendSocket()
 {

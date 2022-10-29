@@ -30,8 +30,6 @@ public:
 	// 서버에서 클라이언트 연결 승인
 	bool AcceptSocket();
 
-	// 클라이언트에서 서버로 연결
-	bool ConnectSocket(const char* _ServerIP, int _ConnectPort);
 	
 	// 데이터 전송
 	bool SendSocket();
@@ -50,8 +48,6 @@ public:
 	SOCKET _Socket;
 
 	SOCKET _SocketConnected;
-
-	SOCKET _ServerSocket;
 };
 
 template<typename T>
