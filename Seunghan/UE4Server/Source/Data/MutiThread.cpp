@@ -3,10 +3,8 @@
 
 #include "MutiThread.h"
 #include "Socket.h"
-#include "MyActor.h"
-#include "DataGameModeBase.h"
+#include "DataGameModeBase.h""
 
-#include "MySocket.h"
 #include "Sockets.h"
 #include "Networking.h"
 #include "SocketSubsystem.h"
@@ -24,9 +22,9 @@ MultiThread::MultiThread()
 	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
 }
 
-MultiThread::MultiThread(ADataGameModeBase* a)
+MultiThread::MultiThread(ADataGameModeBase* GameModeBase)
 {
-	MyGameModeBase = a;
+	MyGameModeBase = GameModeBase;
 	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
 }
 
@@ -59,22 +57,22 @@ uint32 MultiThread::Run()
 
 	FSocket* Socket;
 
-	// ¼ÒÄÏ »ý¼º
-	// ¼ÒÄÏ Å¸ÀÔ°ú ¼³¸íÀ» ÀÎÀÚ·Î ³Ö´Â´Ù.TEXT("Stream")À» ÁÖ¸é TCP ÇÁ·ÎÅäÄÝÀ» »ç¿ëÇÏ°Ú´Ù´Â ¶æÀÌ´Ù. (UDP´Â TEXT("DGram")À» ÀÎÀÚ·Î ÁÖ¸é µÈ´Ù.)
-	//µÎ ¹øÂ° ÀÎÀÚ TEXT("Client Socket") Àº µð¹ö±× ÀÌ¸§ÀÌ´Ù.¾Ë±â ½¬¿î ÀÌ¸§À¸·Î ÁöÁ¤ÇØÁÖÀÚ.
-	// ¼¼ ¹øÂ° ÀÎÀÚ´Â UDP´Â true TCP´Â flaseÀÌ´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ô°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Ö´Â´ï¿½.TEXT("Stream")ï¿½ï¿½ ï¿½Ö¸ï¿½ TCP ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°Ú´Ù´ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½. (UDPï¿½ï¿½ TEXT("DGram")ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Ö¸ï¿½ ï¿½È´ï¿½.)
+	//ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ TEXT("Client Socket") ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½Ì´ï¿½.ï¿½Ë±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+	// ï¿½ï¿½ ï¿½ï¿½Â° ï¿½ï¿½ï¿½Ú´ï¿½ UDPï¿½ï¿½ true TCPï¿½ï¿½ flaseï¿½Ì´ï¿½.
 
 	Socket = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateSocket(TEXT("Stream"), TEXT("Client Socket"));
 
-	// IP ¼³Á¤
+	// IP ï¿½ï¿½ï¿½ï¿½
 	FString address = TEXT("127.0.0.1");
 	FIPv4Address ip;
 	FIPv4Address::Parse(address, ip);
 
-	int32 port = PORT;	// Æ÷Æ®´Â 4000¹ø
+	int32 port = PORT;	// ï¿½ï¿½Æ®ï¿½ï¿½ 4000ï¿½ï¿½
 
-	// Æ÷Æ®¿Í ¼ÒÄÏÀ» ´ã´Â Å¬·¡½º
-	// FInternetAddr¿¡ ³×Æ®¿öÅ© Á¤º¸¸¦ ÀúÀåÇÏ°í, ÀÌÅ¬·¡½º¿¡¼­ ³×Æ®¿öÅ© ¹ÙÀÌÆ®·Î Á¤·ÄÀÌ µÈ´Ù.
+	// ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
+	// FInternetAddrï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
 
 	TSharedRef<FInternetAddr> addr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateInternetAddr();
 	addr->SetIp(ip.Value);
@@ -82,8 +80,9 @@ uint32 MultiThread::Run()
 
 
 
-	// ¿¬°á½Ãµµ, °á°ú¸¦ ¹Þ¾Æ¿È
+	// ï¿½ï¿½ï¿½ï¿½Ãµï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
 	bool isConnetcted = Socket->Connect(*addr);
+	
 	if (isConnetcted)
 	{
 		UE_LOG(LogTemp, Log, TEXT("Connect Success"));

@@ -12,7 +12,7 @@ class DATA_API MultiThread :public FRunnable
 {
 public:
 	MultiThread();
-	MultiThread(class ADataGameModeBase* a);
+	MultiThread(class ADataGameModeBase* GameModeBase);
 	~MultiThread();
 
 	// Overriden from FRunnable

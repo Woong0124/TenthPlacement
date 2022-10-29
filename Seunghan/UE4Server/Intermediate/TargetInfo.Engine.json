@@ -2,17 +2,17 @@
 	"Targets": [
 		{
 			"Name": "UnrealHeaderTool",
-			"Path": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source\\Programs\\UnrealHeaderTool\\UnrealHeaderTool.Target.cs",
+			"Path": "D:\\UE_4.27\\Engine\\Source\\Programs\\UnrealHeaderTool\\UnrealHeaderTool.Target.cs",
 			"Type": "Program"
 		},
 		{
 			"Name": "UE4Editor",
-			"Path": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source\\UE4Editor.Target.cs",
+			"Path": "D:\\UE_4.27\\Engine\\Source\\UE4Editor.Target.cs",
 			"Type": "Editor"
 		},
 		{
 			"Name": "UE4Game",
-			"Path": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source\\UE4Game.Target.cs",
+			"Path": "D:\\UE_4.27\\Engine\\Source\\UE4Game.Target.cs",
 			"Type": "Game"
 		}
 	]

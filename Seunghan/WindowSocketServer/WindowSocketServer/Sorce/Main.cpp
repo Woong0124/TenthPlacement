@@ -3,7 +3,6 @@
 #pragma comment (lib, "ws2_32.lib")
 
 #include <mysql.h>
-#include <stdio.h>
 // 소켓 라이브러리 링크 걸기
 #include <iostream>
 #include "TCP_Socket.h"
@@ -43,6 +42,7 @@ int main()
 	Socket->ReciveSocket();
 
 	Socket->SendSocket();
+	
 	/*while (true)
 	{
 		Socket->TSendStruct<Package>(a);

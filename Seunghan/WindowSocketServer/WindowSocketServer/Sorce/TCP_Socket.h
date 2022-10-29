@@ -1,12 +1,11 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
 
 #pragma once
-// ╪рдо ╤Сюл╨Й╥╞╦╝ ╦╣е╘ ╟и╠Б ╠╦гЖ╨н╦╕ ╧ыюлЁй╦╝х╜ ╫це╡ фдюоюг х╝юЕюз lib
+// О©╫О©╫О©╫О©╫ О©╫О©╫О©╫л╨Й╥╞О©╫О©╫ О©╫О©╫е╘ О©╫и╠О©╫ О©╫О©╫О©╫О©╫О©╫н╦О©╫ О©╫О©╫О©╫лЁй╦О©╫х╜ О©╫О©╫е╡ О©╫О©╫О©╫О©╫О©╫О©╫ х╝О©╫О©╫О©╫О©╫ lib
 #pragma comment (lib, "libmysql.lib")
 #pragma comment (lib, "ws2_32.lib")
 
 #include <mysql.h>
-#include "Common.h"
 
 
 class TCP_Socket
@@ -15,29 +14,29 @@ public:
 	TCP_Socket();
 	~TCP_Socket();
 
-	// ╪рдо цй╠Бх╜ ╪рдо ╧ЖюЭ 2.2 ╪Ёа╓
+	// О©╫О©╫О©╫О©╫ О©╫й╠О©╫х╜ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ 2.2 О©╫О©╫О©╫О©╫
 	bool InitSocket();
 
-	// ╪рдо ╩Щ╪╨
+	// О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 	bool CreatSocket();
 
-	// ╪рдо ╧ыюн╣Е
+	// О©╫О©╫О©╫О©╫ О©╫О©╫О©╫н╣О©╫
 	bool BindSocket(const char* _BindIP,int _BindPort);
 
-	// ╦╝╫╪ ╩Себ╥н ╨╞╟Ф
+	// О©╫О©╫О©╫О©╫ О©╫О©╫О©╫б╥О©╫ О©╫О©╫О©╫О©╫
 	bool ListenSocket();
 
-	// ╪╜╧Ж©║╪╜ е╛╤Сюл╬Пф╝ ©╛╟А ╫бюн
+	// О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ е╛О©╫О©╫О©╫л╬О©╫ф╝ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 	bool AcceptSocket();
 
 	
-	// ╣╔юлем юЭ╪ш
+	// О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 	bool SendSocket();
 
-	// ╣╔юлем ╧чю╫
+	// О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 	bool ReciveSocket();
 
-	// ╠╦а╤ц╪ ╨╞╟Ф
+	// О©╫О©╫О©╫О©╫ц╪ О©╫О©╫О©╫О©╫
 	template<typename T>
 	void TSendStruct(T Struct);
 

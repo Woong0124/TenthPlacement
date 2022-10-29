@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <None Include="..\..\Data.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{A5342507-3BFC-46C2-81FB-67E6B22B7A6D}</UniqueIdentifier>
+      <UniqueIdentifier>{F6D7CA28-D5CD-4A42-A44C-27EC32E2089B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Data.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{2B83287A-E6DF-47A9-99EF-4461CFE48C33}</UniqueIdentifier>
+      <UniqueIdentifier>{C36F89D5-BC65-4CFB-8FC0-7AAFC2932C55}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -24,7 +24,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Data">
-      <UniqueIdentifier>{240B26F5-1F82-49AF-A1DA-4564431231E8}</UniqueIdentifier>
+      <UniqueIdentifier>{BD46F0B9-2649-40E3-8DD0-51E1A50F7D4A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Data\Data.Build.cs">
       <Filter>Source\Data</Filter>
@@ -53,22 +53,10 @@
     <ClInclude Include="..\..\Source\Data\MyActor.h">
       <Filter>Source\Data</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Data\MySocket.cpp">
-      <Filter>Source\Data</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Data\MySocket.h">
-      <Filter>Source\Data</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Data\Socket.cpp">
       <Filter>Source\Data</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Data\Socket.h">
-      <Filter>Source\Data</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Data\TestTCPFSocket.cpp">
-      <Filter>Source\Data</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Data\TestTCPFSocket.h">
       <Filter>Source\Data</Filter>
     </ClInclude>
   </ItemGroup>

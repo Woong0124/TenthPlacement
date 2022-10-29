@@ -233,6 +233,7 @@
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data
 /I C:\Users\seunghan\Desktop\TenthPlacement\Seunghan\UE4Server\Source
+/I Runtime\Networking\Public
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
