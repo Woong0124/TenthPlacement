@@ -11,12 +11,14 @@ AMyActor::AMyActor()
 	
 	SM = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
 
-	ConstructorHelpers::FObjectFinder<UStaticMesh> SMS(TEXT("StaticMesh'/Engine/EditorMeshes/ArcadeEditorSphere.ArcadeEditorSphere'"));
+	ConstructorHelpers::FObjectFinder<UStaticMesh> SMS(TEXT("StaticMesh'/Game/VehicleVarietyPack/Meshes/SM_Hatchback.SM_Hatchback'"));
 
 	if (SMS.Succeeded())
 	{
 		SM->SetStaticMesh(SMS.Object);
 	}
+
+	bReplicates = true;
 }
 
 // Called when the game starts or when spawned
@@ -33,12 +35,7 @@ void AMyActor::Tick(float DeltaTime)
 
 }
 
-void AMyActor::Move(int X)
+void AMyActor::MyActorMove(FVector Value)
 {
-	FVector s;
-	s = GetActorLocation();
-	FVector Offset;
-	Offset.X = X;
-	AActor::AddActorLocalOffset(Offset);
 }
 

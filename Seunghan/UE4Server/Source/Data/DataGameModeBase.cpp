@@ -10,13 +10,9 @@
 #include "Kismet/GameplayStatics.h"
 #include "MutiThread.h"
 #include "GameFramework/Actor.h"
-#include "MySocket.h"
 
 using namespace std;
 
-#define PORT	4000
-#define PACKED_SIZE 1024
-#define SERVER_IP	"192.168.0.178"
 
 
 ADataGameModeBase::ADataGameModeBase()
@@ -31,26 +27,19 @@ ADataGameModeBase::~ADataGameModeBase()
 
 void ADataGameModeBase::BeginPlay()
 {
-	Worker = new MultiThread(this);
-
-	GetWorldTimerManager().SetTimer(TimerHandle, this, &ADataGameModeBase::Process, 0.5f, true);
-
-	/*MyWorker = new MySocket(this);
-
-	GetWorldTimerManager().SetTimer(TimerHandle, this, &ADataGameModeBase::Process, 0.5f, true);*/
+	
 }
 
 void ADataGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	UE_LOG(LogTemp, Warning, TEXT("EndPlay"));
-	delete Worker;
-	/*delete MyWorker;*/
+	
 }
 
 void ADataGameModeBase::Process()
 {
 	static int i = 0;
-	if (ReceivePack.Header == PackageHeader::HSpawn)
+	
+	if (ReceivePack.Header == PackageHeader::HSpawn && i == 0)
 	{
 		FVector SpawnVector;
 		SpawnVector.X = ReceivePack.X;
@@ -66,13 +55,42 @@ void ADataGameModeBase::Process()
 		MoveVector.X = ReceivePack.X;
 		MoveVector.Y = ReceivePack.Y;
 		MoveVector.Z = ReceivePack.Z;
-		MyActor[0]->AddActorWorldOffset(MoveVector);
-	
+		if (MyActor[0] != nullptr)
+		{
+			MyActor[0]->AddActorWorldOffset(MoveVector);
+		}
 	}
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("NotData"));
 	}
 
+	if (i == 0)
+	{
+		FVector SpawnVector;
+		SpawnVector.X = 100;
+		SpawnVector.Y = 100;
+		SpawnVector.Z = 100;
+		MyActor[i] = (GetWorld()->SpawnActor<AMyActor>(SpawnVector, FRotator::ZeroRotator));
+		++i;
+	}
+
+
+}
+
+
+void ADataGameModeBase::RunTherad()
+{
+	Worker = new MultiThread(this);
+	UE_LOG(LogTemp, Warning, TEXT("RunThread!"));
+	IsConnected = true;
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &ADataGameModeBase::Process, 0.2f, IsConnected);
+}
+
+void ADataGameModeBase::StopTherad()
+{
+	UE_LOG(LogTemp, Warning, TEXT("StopThread!"));
+	/*delete Worker;*/
+	/*Worker = nullptr;*/
 }
 

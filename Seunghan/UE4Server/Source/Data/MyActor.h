@@ -22,7 +22,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void Move(int X);
+
+	UFUNCTION(Server, reliable)
+	void MyActorMove(FVector Value);
 
 private:
 	class UStaticMeshComponent* SM;

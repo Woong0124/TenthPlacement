@@ -1,23 +1,33 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #pragma once
-#include "Socket.h"
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "windows/AllowWindowsPlatformTypes.h"
-#include "windows/prewindowsapi.h"
-
-#pragma comment(lib, "ws2_32.lib")
-#define WIN32_LEAN_AND_MEAN
-#include <WinSock2.h>
 #include "Runtime/Core/Public/Math/Vector.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MySocket.h"
-
-#include "windows/PostWindowsApi.h"
-#include "windows/HideWindowsPlatformTypes.h"
 #include "DataGameModeBase.generated.h"
+
+#pragma pack(1)
+struct Package
+{
+	int PackSize;
+	int Header;
+	int Key;
+	int Index;
+	int X;
+	int Y;
+	int Z;
+};
+#pragma pack()
+
+enum PackageHeader
+{
+	HSpawn = 1,
+	HActorMove = 2,
+
+	None = 9
+};
 
 /**
  * 
@@ -34,14 +44,20 @@ public:
 	void SpawnActor(FVector ActorVector);
 
 	void Process();
+
 	Package ReceivePack;
 	FTimerHandle TimerHandle;
 
+	UFUNCTION(BlueprintCallable)
+	void RunTherad();
+
+	UFUNCTION(BlueprintCallable)
+	void StopTherad();
+
+	bool IsConnected;
 private:
 
-	
 	class AMyActor* MyActor[5];
 	class MultiThread* Worker;
-	Socket _Sock;
-	bool IsConnected;
+	
 };
