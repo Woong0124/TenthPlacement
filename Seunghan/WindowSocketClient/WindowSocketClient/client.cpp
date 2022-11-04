@@ -10,7 +10,7 @@ using namespace std;
 
 #define PORT	4000
 #define PACKED_SIZE 1024
-#define SERVER_IP	"192.168.0.178"
+#define SERVER_IP	"192.168.219.104"
 
 struct FVector
 {
@@ -63,24 +63,11 @@ int main()
 	char	MSG[] = "Clinet Send";
 	send(ClinetSocket, MSG, sizeof(MSG), 0);
 
-	int len;
-	recv(ClinetSocket, (char*)&len, sizeof(int), 0);
-	
-	int as;
-	SpawnActorInfo* a;
+
 	char	Buffer[1024] = { 0, };
-	as =recv(ClinetSocket, Buffer, len, 0);
+	recv(ClinetSocket, Buffer, 1024, 0);
 	
-	
-
-	Buffer[as] = '\0';
-	a = (SpawnActorInfo*)Buffer;
-
-	cout << a->Key << endl;
-	cout << a->Name << endl;
-	cout << a->VectorInfo.x << endl;
-	cout << a->VectorInfo.y << endl;
-	cout << a->VectorInfo.z << endl;
+	cout << Buffer << endl;
 
 	closesocket(ClinetSocket);
 

@@ -1,12 +1,11 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
 
 #pragma once
-// ¼ÒÄÏ ¶óÀÌºê·¯¸® ¸µÅ© °É±â ±¸ÇöºÎ¸¦ ¹ÙÀÌ³Ê¸®È­ ½ÃÅ² ÆÄÀÏÀÇ È®ÀåÀÚ lib
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºê·¯ï¿½ï¿½ ï¿½ï¿½Å© ï¿½É±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½Ì³Ê¸ï¿½È­ ï¿½ï¿½Å² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ lib
 #pragma comment (lib, "libmysql.lib")
 #pragma comment (lib, "ws2_32.lib")
 
 #include <mysql.h>
-#include "Common.h"
 
 
 class TCP_Socket
@@ -15,31 +14,29 @@ public:
 	TCP_Socket();
 	~TCP_Socket();
 
-	// ¼ÒÄÏ ÃÊ±âÈ­ ¼ÒÄÏ ¹öÀü 2.2 ¼³Á¤
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2.2 ï¿½ï¿½ï¿½ï¿½
 	bool InitSocket();
 
-	// ¼ÒÄÏ »ý¼º
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	bool CreatSocket();
 
-	// ¼ÒÄÏ ¹ÙÀÎµå
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½
 	bool BindSocket(const char* _BindIP,int _BindPort);
 
-	// ¸®½¼ »óÅÂ·Î º¯°æ
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
 	bool ListenSocket();
 
-	// ¼­¹ö¿¡¼­ Å¬¶óÀÌ¾ðÆ® ¿¬°á ½ÂÀÎ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	bool AcceptSocket();
 
-	// Å¬¶óÀÌ¾ðÆ®¿¡¼­ ¼­¹ö·Î ¿¬°á
-	bool ConnectSocket(const char* _ServerIP, int _ConnectPort);
 	
-	// µ¥ÀÌÅÍ Àü¼Û
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	bool SendSocket();
 
-	// µ¥ÀÌÅÍ ¹ÞÀ½
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	bool ReciveSocket();
 
-	// ±¸Á¶Ã¼ º¯°æ
+	// ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
 	template<typename T>
 	void TSendStruct(T Struct);
 
@@ -50,8 +47,6 @@ public:
 	SOCKET _Socket;
 
 	SOCKET _SocketConnected;
-
-	SOCKET _ServerSocket;
 };
 
 template<typename T>
@@ -59,7 +54,6 @@ inline void TCP_Socket::TSendStruct(T Struct)
 {
 	int SendInt;
 	int SendIntLength = sizeof(Struct);
-
 	SendInt = send(_SocketConnected, (char*)&SendIntLength, sizeof(int), 0);
 	SendInt = send(_SocketConnected, (char*)&Struct, sizeof(Struct), 0);
 }
@@ -71,7 +65,7 @@ inline T TCP_Socket::TReciveStruct(T* Struct)
 	char	Buffer[1024] = { 0, };
 	
 	recv(_SocketConnected, (char*)&len, sizeof(int), 0);
-	recv(_SocketConnected, Buffer, len, 0);
+	recv(_SocketConnected, sizeof(Struct), 1024 , 0);
 
 	Struct = (T*)Buffer;
 

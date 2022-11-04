@@ -3,8 +3,11 @@
 
 #include "MutiThread.h"
 #include "Socket.h"
-#include "MyActor.h"
-#include "DataGameModeBase.h"
+#include "DataGameModeBase.h""
+
+#include "Sockets.h"
+#include "Networking.h"
+#include "SocketSubsystem.h"
 
 #define PORT	4000
 #define PACKED_SIZE 1024
@@ -19,9 +22,9 @@ MultiThread::MultiThread()
 	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
 }
 
-MultiThread::MultiThread(ADataGameModeBase* a)
+MultiThread::MultiThread(ADataGameModeBase* GameModeBase)
 {
-	MyGameModeBase = a;
+	MyGameModeBase = GameModeBase;
 	Thread = FRunnableThread::Create(this, TEXT("SocketServer"));
 }
 
@@ -51,32 +54,96 @@ bool MultiThread::Init()
 
 uint32 MultiThread::Run()
 {
-	// Peform your processor intensive task here. In this example, a neverending
-	// task is created, which will only end when Stop is called.
-	Socket* _Sock = new Socket;
-	_Sock->InitSocket();
-	_Sock->CreatSocket();
-	_Sock->ConnectSocket(SERVER_IP, PORT);
-	UE_LOG(LogTemp, Warning, TEXT("My custom thread is running!"));
+
+	FSocket* Socket;
+
+	// ���� ����
+	// ���� Ÿ�԰� ������ ���ڷ� �ִ´�.TEXT("Stream")�� �ָ� TCP ���������� ����ϰڴٴ� ���̴�. (UDP�� TEXT("DGram")�� ���ڷ� �ָ� �ȴ�.)
+	//�� ��° ���� TEXT("Client Socket") �� ����� �̸��̴�.�˱� ���� �̸����� ����������.
+	// �� ��° ���ڴ� UDP�� true TCP�� flase�̴�.
+
+	Socket = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateSocket(TEXT("Stream"), TEXT("Client Socket"));
+
+	// IP ����
+	FString address = TEXT("127.0.0.1");
+	FIPv4Address ip;
+	FIPv4Address::Parse(address, ip);
+
+	int32 port = PORT;	// ��Ʈ�� 4000��
+
+	// ��Ʈ�� ������ ��� Ŭ����
+	// FInternetAddr�� ��Ʈ��ũ ������ �����ϰ�, ��Ŭ�������� ��Ʈ��ũ ����Ʈ�� ������ �ȴ�.
+
+	TSharedRef<FInternetAddr> addr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateInternetAddr();
+	addr->SetIp(ip.Value);
+	addr->SetPort(port);
+
+
+
+	// ����õ�, ����� �޾ƿ�
+	bool isConnetcted = Socket->Connect(*addr);
 	
+	if (isConnetcted)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Connect Success"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Log, TEXT("Connect fail"));
+	}
 
 	Package ReceivePack;
 
-	int i = 0;
 	while (bRunThread)
 	{
-		
-		FPlatformProcess::Sleep(0.01f);
 
-		ReceivePack = _Sock->TReceiveStruct<Package>(&ReceivePack);
+		FPlatformProcess::Sleep(0.3f);
+
+		uint8 len;
+		int32	temp1 = 0;
+		Socket->Recv(&len, 4 , temp1);
+
+		uint8	Buffer[1024] = { 0 };
+		int32	temp = 0;
+		Socket->Recv(Buffer, len , temp);
+
+		ReceivePack = *(Package*)Buffer;
 
 		UE_LOG(LogTemp, Log, TEXT("Header : %d X : %d Z : %d"), ReceivePack.Header, ReceivePack.X, ReceivePack.Z);
 
 		MyGameModeBase->ReceivePack = ReceivePack;
 	}
 
-	delete _Sock;
+	Socket->Close();
+
 	return 0;
+
+
+
+	// Peform your processor intensive task here. In this example, a neverending
+	// task is created, which will only end when Stop is called.
+	//Socket* _Sock = new Socket;
+	//_Sock->InitSocket();
+	//_Sock->CreatSocket();
+	//_Sock->ConnectSocket(SERVER_IP, PORT);
+	//UE_LOG(LogTemp, Warning, TEXT("My custom thread is running!"));
+	//
+	//Package ReceivePack;
+
+	//while (bRunThread)
+	//{
+	//	
+	//	FPlatformProcess::Sleep(0.3f);
+
+	//	ReceivePack = _Sock->TReceiveStruct<Package>(&ReceivePack);
+
+	//	UE_LOG(LogTemp, Log, TEXT("Header : %d X : %d Z : %d"), ReceivePack.Header, ReceivePack.X, ReceivePack.Z);
+
+	//	MyGameModeBase->ReceivePack = ReceivePack;
+	//}
+
+	//delete _Sock;
+	//return 0;
 }
 
 

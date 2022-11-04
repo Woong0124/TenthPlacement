@@ -1,0 +1,201 @@
+D:\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h
+D:\TenthPlacement\Seunghan\UE4Server\Source\Data\Socket.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/AllowWindowsPlatformTypes.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/WindowsHWrapper.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/PreWindowsApi.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/MinWindows.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\Windows.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\sdkddkver.h
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE\excpt.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\windef.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\minwindef.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\kernelspecs.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\basetsd.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\guiddef.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack8.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\apiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\ktmtypes.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winbase.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\apisetcconv.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\minwinbase.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\apiquery2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\processenv.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\fileapifromapp.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\fileapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\debugapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\utilapiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\handleapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\errhandlingapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\fibersapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\namedpipeapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\profileapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\heapapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\ioapiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\synchapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\interlockedapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\processthreadsapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\sysinfoapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\memoryapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\enclaveapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\threadpoollegacyapiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\threadpoolapiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\jobapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\jobapi2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\wow64apiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\libloaderapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\securitybaseapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\namespaceapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\systemtopologyapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\processtopologyapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\securityappcontainer.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\realtimeapiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\winerror.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\timezoneapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\wingdi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack4.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winuser.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\tvout.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnls.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\datetimeapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\stringapiset.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnls.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\wincon.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\wincontypes.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\consoleapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\consoleapi2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\consoleapi3.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winver.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\verrsrc.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winreg.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\reason.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnetwk.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\wnnc.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\stralign.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\imm.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\ime_cmodes.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/PostWindowsApi.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/prewindowsapi.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\WinSock2.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\ws2def.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\inaddr.h
+C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\qos.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/PostWindowsApi.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/HideWindowsPlatformTypes.h
+D:\TenthPlacement\Seunghan\UE4Server\Source\Data\MySocket.h
+D:\UE_4.27\Engine\Source\Runtime\Sockets\Public\Sockets.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Networking.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/MonolithicHeaderBoilerplate.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Core.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/MonolithicHeaderBoilerplate.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\GenericPlatform/GenericPlatformNamedPipe.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/PlatformNamedPipe.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/WindowsPlatformNamedPipe.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\GenericPlatform/GenericPlatformCriticalSection.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/PlatformFile.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Windows/WindowsPlatformFile.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/PlatformIncludes.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/MonolithicHeaderBoilerplate.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/MessageDialog.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\ProfilingDebugging/ScopedDebugInfo.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\ProfilingDebugging/ExternalProfiler.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/StringUtility.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/NameAsStringProxyArchive.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/MRUArray.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/TransArray.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/ArrayBuilder.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/SingleThreadEvent.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/ThreadManager.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/StaticBitArray.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/MapBuilder.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/ThreadingBase.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/TextLocalizationManagerGlobals.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/Culture.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Logging/LogSuppressionInterface.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/OutputDevices.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Logging/LogScopedVerbosityOverride.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceNull.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceMemory.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceFile.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceDebug.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceArchiveWrapper.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceAnsiError.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/TimeGuard.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/LargeMemoryWriter.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/LargeMemoryData.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/LargeMemoryReader.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/BufferArchive.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/ArrayReader.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/ArrayWriter.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Serialization/BufferWriter.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/WildcardString.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Containers/CircularQueue.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceHelper.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/ScopedSlowTask.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/CallbackDevice.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/LocalTimestampDirectoryVisitor.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/BlueprintsObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/BuildObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/CoreObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/EditorObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/FrameworkObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/MobileObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/NetworkingObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/OnlineObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/PhysicsObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/PlatformObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/SequencerObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\UObject/VRObjectVersion.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceConsole.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\Misc/MonitoredProcess.h
+D:\UE_4.27\Engine\Source\Runtime\Sockets\Public\SocketSubsystem.h
+D:\UE_4.27\Engine\Source\Runtime\Sockets\Public\AddressInfoTypes.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Interfaces/IPv4/IPv4SubnetMask.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Interfaces/IPv4/IPv4Address.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Interfaces/IPv4/IPv4Endpoint.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Interfaces/IPv4/IPv4Subnet.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Interfaces/Steam/SteamEndpoint.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Interfaces/INetworkingModule.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Common/TcpSocketBuilder.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Common/TcpListener.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Common/UdpSocketReceiver.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Common/UdpSocketSender.h
+D:\UE_4.27\Engine\Source\Runtime\Networking\Public\Common/UdpSocketBuilder.h
+D:\TenthPlacement\Seunghan\UE4Server\Source\Data\MyActor.h
+D:\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\MyActor.generated.h
+D:\TenthPlacement\Seunghan\UE4Server\Source\Data\DataGameModeBase.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/AllowWindowsPlatformTypes.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/prewindowsapi.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/PostWindowsApi.h
+D:\UE_4.27\Engine\Source\Runtime\Core\Public\windows/HideWindowsPlatformTypes.h
+D:\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Inc\Data\DataGameModeBase.generated.h

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SocketPrac.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{C7902317-D1B5-49D2-A1B4-F56FE3B4487B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SocketPrac.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SocketPracEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{1ADFA61C-9CBA-4B33-B0DC-DA9DD940A95B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\SocketPrac">
+      <UniqueIdentifier>{B97A0002-6923-41DB-9CBC-ACE832F5FC13}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SocketPrac\SocketPrac.Build.cs">
+      <Filter>Source\SocketPrac</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SocketPrac\SocketPrac.cpp">
+      <Filter>Source\SocketPrac</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SocketPrac\SocketPrac.h">
+      <Filter>Source\SocketPrac</Filter>
+    </ClInclude>
+    <Filter Include="Source\SocketPrac\Private">
+      <UniqueIdentifier>{2AE64C60-0147-451C-BCF5-C4780D415ED5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\SocketPrac\Private\MyActor01.cpp">
+      <Filter>Source\SocketPrac\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SocketPrac\Private\MyRunnable.cpp">
+      <Filter>Source\SocketPrac\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SocketPrac\Private\MySocket.cpp">
+      <Filter>Source\SocketPrac\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SocketPrac\Private\SocketPracGameModeBase.cpp">
+      <Filter>Source\SocketPrac\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\SocketPrac\Public">
+      <UniqueIdentifier>{7A61936C-6745-442E-84C7-B7F4C45CFB6B}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\SocketPrac\Public\MyActor01.h">
+      <Filter>Source\SocketPrac\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SocketPrac\Public\MyRunnable.h">
+      <Filter>Source\SocketPrac\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SocketPrac\Public\MySocket.h">
+      <Filter>Source\SocketPrac\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SocketPrac\Public\SocketPracGameModeBase.h">
+      <Filter>Source\SocketPrac\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

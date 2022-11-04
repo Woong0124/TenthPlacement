@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "SocketPrac",
+			"Path": "C:\\Users\\seunghan\\Desktop\\TenthPlacement\\Unreal\\Source\\SocketPrac.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SocketPracEditor",
+			"Path": "C:\\Users\\seunghan\\Desktop\\TenthPlacement\\Unreal\\Source\\SocketPracEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

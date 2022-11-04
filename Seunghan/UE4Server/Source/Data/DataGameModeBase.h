@@ -13,12 +13,11 @@
 #include "Runtime/Core/Public/Math/Vector.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-
+#include "MySocket.h"
 
 #include "windows/PostWindowsApi.h"
 #include "windows/HideWindowsPlatformTypes.h"
 #include "DataGameModeBase.generated.h"
-
 
 /**
  * 
@@ -40,8 +39,8 @@ public:
 
 private:
 
-	class AMyActor* MyActor[5];
 	
+	class AMyActor* MyActor[5];
 	class MultiThread* Worker;
 	Socket _Sock;
 	bool IsConnected;

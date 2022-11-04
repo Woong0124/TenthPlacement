@@ -32,13 +32,3 @@ void AMyActor::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-void AMyActor::Move(int X)
-{
-	FVector s;
-	s = GetActorLocation();
-	FVector Offset;
-	Offset.X = X;
-	AActor::AddActorLocalOffset(Offset);
-}
-

@@ -10,6 +10,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "MutiThread.h"
 #include "GameFramework/Actor.h"
+#include "MySocket.h"
+
 using namespace std;
 
 #define PORT	4000
@@ -29,22 +31,20 @@ ADataGameModeBase::~ADataGameModeBase()
 
 void ADataGameModeBase::BeginPlay()
 {
-	/*GetWorld()->SpawnActor<AMyActor>(FVector::ZeroVector, FRotator::ZeroRotator);*/
-	UE_LOG(LogTemp, Warning, TEXT("BeginPlay"));
 	Worker = new MultiThread(this);
 
-	GetWorldTimerManager().SetTimer(TimerHandle, this, &ADataGameModeBase::Process, 0.01f, true);
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &ADataGameModeBase::Process, 0.5f, true);
+
+	/*MyWorker = new MySocket(this);
+
+	GetWorldTimerManager().SetTimer(TimerHandle, this, &ADataGameModeBase::Process, 0.5f, true);*/
 }
 
 void ADataGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	UE_LOG(LogTemp, Warning, TEXT("EndPlay"));
 	delete Worker;
-}
-
-void ADataGameModeBase::SpawnActor(FVector ActorVector)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Spawn!"));
+	/*delete MyWorker;*/
 }
 
 void ADataGameModeBase::Process()
