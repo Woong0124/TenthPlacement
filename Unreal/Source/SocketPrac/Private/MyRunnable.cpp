@@ -36,7 +36,30 @@ bool MyRunnable::Init()
 
 uint32 MyRunnable::Run()
 {
-	MySock = new MySocket();
+	////////////////////////////////////////////////
+	// FSocket 으로 구현
+	MyFSock = new MyFSocket();
+	MyDataStruct = new DataStruct();
+	bSocketCheck = MyFSock->InitSocket();
+	bSocketCheck = MyFSock->ConnectSocket();
+
+	if (bSocketCheck)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Success : Thread")); 
+
+		bRunThread = true;
+		while (bRunThread)
+		{
+			*MyDataStruct = MyFSock->RecvStructSocket(MyDataStruct);
+		}
+	}
+	delete MyDataStruct;
+	delete MyFSock;
+
+
+	////////////////////////////////////////////////
+	// Winsock 으로 구현
+	/*MySock = new MySocket();
 	MyDataStruct = new DataStruct();
 	bSocketCheck = MySock->InitSocket();
 	bSocketCheck = MySock->ConnectSocket();
@@ -50,7 +73,8 @@ uint32 MyRunnable::Run()
 		}
 	}
 	delete MyDataStruct;
-	delete MySock;
+	delete MySock;*/
+
 	return 0;
 }
 

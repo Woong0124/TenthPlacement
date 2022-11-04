@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "HAL/Runnable.h"
 #include "MySocket.h"
+#include "MyFSocket.h"
 
 /**
  * 
@@ -24,6 +25,12 @@ public:
 	DataStruct* MyDataStruct;
 	bool bSocketCheck;
 	ASocketPracGameModeBase* MyGM;
+
+	///////////////////////////////
+	//
+	MyFSocket* MyFSock;
+	//
+	///////////////////////////////
 
 private:
 	FRunnableThread* MyThread;
