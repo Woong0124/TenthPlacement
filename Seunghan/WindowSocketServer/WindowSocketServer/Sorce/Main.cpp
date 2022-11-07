@@ -56,7 +56,7 @@ int main()
 	
 	mysql_free_result(sql->mysqlResult);
 	delete Socket;
-	delete sql;
+	delete sql;x
 
 	return 0;
 }

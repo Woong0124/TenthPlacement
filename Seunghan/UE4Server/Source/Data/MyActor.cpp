@@ -2,6 +2,7 @@
 
 
 #include "MyActor.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 AMyActor::AMyActor()
@@ -19,6 +20,12 @@ AMyActor::AMyActor()
 	}
 
 	bReplicates = true;
+	SetReplicateMovement(true);
+}
+
+void AMyActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
 // Called when the game starts or when spawned
@@ -26,16 +33,19 @@ void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	MyLocation = GetActorLocation();
+
 }
 
 // Called every frame
 void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
-void AMyActor::MyActorMove(FVector Value)
+
+void AMyActor::MyActorMove_Implementation(FVector Value)
 {
+	AddActorWorldOffset(Value);
 }
 

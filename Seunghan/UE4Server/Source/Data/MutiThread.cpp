@@ -29,13 +29,16 @@ MultiThread::MultiThread(ADataGameModeBase* a)
 
 MultiThread::~MultiThread()
 {
+	if (Socket->Close())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Close Socket Error"));
+	}
 	if (Thread)
 	{
-		Thread->Kill();
+		Thread->Kill(true);
 		delete Thread;
 	}
 }
-
 #pragma endregion
 
 
@@ -50,7 +53,7 @@ bool MultiThread::Init()
 uint32 MultiThread::Run()
 {
 
-	FSocket* Socket;
+	
 
 	// 소켓 생성
 	// 소켓 타입과 설명을 인자로 넣는다.TEXT("Stream")을 주면 TCP 프로토콜을 사용하겠다는 뜻이다. (UDP는 TEXT("DGram")을 인자로 주면 된다.)
@@ -70,7 +73,13 @@ uint32 MultiThread::Run()
 	if (ensure(SocketSubSystem))
 	{
 		auto ResolveInfo = SocketSubSystem->GetHostByName(SERVER_DOMAIN);
-		while (!ResolveInfo->IsComplete());
+		while (true)
+		{
+			if (ResolveInfo->IsComplete())
+			{
+				break;
+			}
+		}
 			if (ResolveInfo->IsComplete() && ResolveInfo->GetErrorCode() == 0)
 			{
 				const FInternetAddr* Addr = &ResolveInfo->GetResolvedAddress();
@@ -118,9 +127,7 @@ uint32 MultiThread::Run()
 
 
 		}
-
-		Socket->Close();
-
+		
 		return 0;
 
 	}
@@ -128,13 +135,17 @@ uint32 MultiThread::Run()
 	{
 		UE_LOG(LogTemp, Log, TEXT("Connect fail"));
 
-		Socket->Close();
-
 		return 0;
 	}
 }
 
 void MultiThread::Stop()
 {
+	if (!Thread)
+	{
+		Thread->Kill();
+		delete Thread;
+	}
+	
 	bRunThread = false;
 }

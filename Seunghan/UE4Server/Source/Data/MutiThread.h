@@ -29,4 +29,6 @@ private:
 	class ADataGameModeBase* MyGameModeBase;
 	// Used to know when the thread should exit, changed in Stop(), read in Run()
 	bool bRunThread;
+
+	FSocket* Socket;
 };

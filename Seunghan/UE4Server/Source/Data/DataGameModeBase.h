@@ -46,15 +46,20 @@ public:
 	void Process();
 
 	Package ReceivePack;
+
 	FTimerHandle TimerHandle;
+	FTimerHandle GoStopHandle;
 
 	UFUNCTION(BlueprintCallable)
 	void RunTherad();
 
 	UFUNCTION(BlueprintCallable)
 	void StopTherad();
-
+	int32 SpawnActorCount;
 	bool IsConnected;
+
+	void ActorGo();
+
 private:
 
 	class AMyActor* MyActor[5];

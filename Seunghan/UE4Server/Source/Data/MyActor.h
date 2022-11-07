@@ -14,7 +14,7 @@ class DATA_API AMyActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AMyActor();
-
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -25,6 +25,13 @@ public:
 
 	UFUNCTION(Server, reliable)
 	void MyActorMove(FVector Value);
+	void MyActorMove_Implementation(FVector Value);
+
+	float TimeDeltaTime;
+
+	FTimerHandle TimeHandler;
+
+	FVector MyLocation;
 
 private:
 	class UStaticMeshComponent* SM;
