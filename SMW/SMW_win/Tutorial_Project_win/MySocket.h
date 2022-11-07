@@ -33,14 +33,12 @@ public:
 	// 접속 승인
 	bool AcceptSocket();
 
-	//클라이언트에서 서버로 연결
-	bool ConnectSocket(const char* _ServerIP, int _ConnectPort);
-
+	
 	// Send
 	bool SendSocket();
 
 	// Recv
-	bool RecvSocket();
+	bool ReciveSocket();
 
 	
 
@@ -67,10 +65,10 @@ template<typename T>
 inline T MySocket::TReciveStruct(T* Struct)
 {
 	char Buffer[1024] = { 0, };
-	int len;
+	int len = 0;
 	recv(CToSSocket, (char*)&len, sizeof(int), 0);
 	
-	recv(CToSSocket, Buffer, len, 0);
+	recv(CToSSocket, sizeof(Struct), 1024, 0);
 	Struct = (T*)Buffer;
 
 	return *Struct;

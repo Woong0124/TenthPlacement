@@ -21,8 +21,8 @@ struct FVector
 
 struct SpawnActorInfo
 {
-	int ID;
-	std::string ActorType;
+	int Key;
+	std::string Name;
 	FVector VectorInfo;
 };
 
@@ -61,26 +61,13 @@ int main()
 	}
 
 	char	MSG[] = "Clinet Send";
-	send(ClinetSocket, MSG, sizeof(MSG), 0);
+	recv(ClinetSocket, MSG, sizeof(MSG), 0);
+	
 
-	int len;
-	recv(ClinetSocket, (char*)&len, sizeof(int), 0);
-
-	int as;
-	SpawnActorInfo* a;
 	char	Buffer[1024] = { 0, };
-	as = recv(ClinetSocket, Buffer, len, 0);
+	recv(ClinetSocket, Buffer, 1024, 0);
 
 
-
-	Buffer[as] = '\0';
-	a = (SpawnActorInfo*)Buffer;
-
-	cout << a->ID << endl;
-	cout << a->ActorType << endl;
-	cout << a->VectorInfo.x << endl;
-	cout << a->VectorInfo.y << endl;
-	cout << a->VectorInfo.z << endl;
 
 	closesocket(ClinetSocket);
 

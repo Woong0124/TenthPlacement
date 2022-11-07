@@ -94,29 +94,6 @@ bool MySocket::AcceptSocket()
 	return true;
 }
 
-bool MySocket::ConnectSocket(const char* _ServerIP, int _ConnectPort)
-{
-	CToSSocket = socket(PF_INET, SOCK_STREAM, 0);
-	if (ServerSocket == INVALID_SOCKET)
-	{
-		std::cout << "fail Create : " << GetLastError() << std::endl;
-	}
-
-	SOCKADDR_IN ClientSocketAddr;
-	memset(&ClientSocketAddr, 0, sizeof(SOCKADDR_IN));
-	ClientSocketAddr.sin_family = AF_INET;
-	ClientSocketAddr.sin_port = htons(_ConnectPort);
-	ClientSocketAddr.sin_addr.s_addr = inet_addr(_ServerIP);
-
-	int Result = connect(CToSSocket, (SOCKADDR*)&ClientSocketAddr, sizeof(SOCKADDR_IN));
-
-	if (Result == SOCKET_ERROR)
-	{
-		std::cout << "fail connect : " << GetLastError() << std::endl;
-	}
-
-	return true;
-}
 
 bool MySocket::SendSocket()
 {
@@ -132,7 +109,7 @@ bool MySocket::SendSocket()
 	return true;
 }
 
-bool MySocket::RecvSocket()
+bool MySocket::ReciveSocket()
 {
 	char	Buffer[1024] = { 0, };
 	int RecvBuffer = recv(ClientSocket, Buffer, 1024, 0);

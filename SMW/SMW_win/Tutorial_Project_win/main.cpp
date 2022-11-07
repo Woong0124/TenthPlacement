@@ -47,11 +47,9 @@ int main()
 
 	Socket->AcceptSocket();
 
-	while (true)
-	{
-		Socket->TSendStruct<Package>(a);
-		sql->Insert(a);
-	}
+	Socket->ReciveSocket();
+
+	Socket->SendSocket();
 
 	
 
