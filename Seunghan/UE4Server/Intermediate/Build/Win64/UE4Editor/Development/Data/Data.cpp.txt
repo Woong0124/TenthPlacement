@@ -1,2 +1,0 @@
-D:\TenthPlacement\Seunghan\UE4Server\Intermediate\Build\Win64\UE4Editor\Development\Data\Definitions.Data.h
-D:\TenthPlacement\Seunghan\UE4Server\Source\Data\Data.h

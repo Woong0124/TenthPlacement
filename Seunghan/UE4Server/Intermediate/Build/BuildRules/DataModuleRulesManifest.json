@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\TenthPlacement\\Seunghan\\UE4Server\\Source\\Data\\Data.Build.cs",
-		"D:\\TenthPlacement\\Seunghan\\UE4Server\\Source\\Data.Target.cs",
-		"D:\\TenthPlacement\\Seunghan\\UE4Server\\Source\\DataEditor.Target.cs"
-	],
-	"EngineVersion": "4.27.2"
-}

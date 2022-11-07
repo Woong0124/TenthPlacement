@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
-    <file url="file://$PROJECT_DIR$/Sorce/Main.cpp" charset="x-windows-949" />
-    <file url="file://$PROJECT_DIR$/Sorce/MySQL.cpp" charset="x-windows-949" />
-    <file url="file://$PROJECT_DIR$/Sorce/MySQL.h" charset="x-windows-949" />
-    <file url="file://$PROJECT_DIR$/Sorce/TCP_Socket.cpp" charset="x-windows-949" />
-  </component>
-</project>
